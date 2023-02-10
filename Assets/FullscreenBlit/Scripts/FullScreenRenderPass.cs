@@ -64,7 +64,7 @@ public class FullScreenRenderPass : ScriptableRenderPass
     }
 
     // called after Execute, use it to clean up anything allocated in Configure
-    public override void FrameCleanup(CommandBuffer cmd)
+    public override void OnCameraCleanup(CommandBuffer cmd)
     {
         cmd.ReleaseTemporaryRT(tempTexture.id);
     }
