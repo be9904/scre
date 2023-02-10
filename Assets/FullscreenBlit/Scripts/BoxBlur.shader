@@ -69,6 +69,7 @@ Shader "Hidden/Box Blur"
                     float2 offset = float2(0, y - _BlurStrength);
                     sum += SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv + offset * res);
                 }
+                
                 return sum / samples;
             }
             ENDHLSL
