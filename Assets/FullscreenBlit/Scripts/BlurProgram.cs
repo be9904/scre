@@ -7,8 +7,10 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(UIDocument))]
 public class BlurProgram : MonoBehaviour
 {
+    // Reference renderer feature asset
     [SerializeField] private FullScreenBlurFeature blurFeature;
 
+    // UI Elements
     private UIDocument programUI;
     private Label title;
     private Label description;
@@ -32,7 +34,7 @@ public class BlurProgram : MonoBehaviour
         // set text
         title.text = "Full Screen Box Blur";
         description.text = 
-            "A full screen box blur effect implemented with a custom renderer feature. " +
+            "A full screen box blur effect implemented with URP custom renderer feature. " +
             "The blit material performs vertical blur and horizontal blur respectively.";
         
         // register events
