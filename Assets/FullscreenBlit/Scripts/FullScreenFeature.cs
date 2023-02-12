@@ -6,7 +6,7 @@ public class FullScreenPassSettings
 {
     public bool isEnabled = true;
     public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
-    public Material blitMaterial;
+    public Shader blitShader;
 
     [Range(0, 20)] public int blurStrength = 5;
 }

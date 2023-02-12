@@ -18,9 +18,9 @@ public class FullScreenRenderPass : ScriptableRenderPass
         FullScreenPassSettings passSettings)
     {
         this.profilerTag = profilerTag;
-        this.renderPassEvent = passSettings.renderPassEvent;
-        this.blitMaterial = passSettings.blitMaterial;
-        
+        renderPassEvent = passSettings.renderPassEvent;
+        blitMaterial = new Material(passSettings.blitShader);
+
         blitMaterial.SetInt(_blurStrength, passSettings.blurStrength);
     }
     

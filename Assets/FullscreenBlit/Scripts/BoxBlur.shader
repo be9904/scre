@@ -25,19 +25,18 @@ Shader "Hidden/Box Blur"
 
         struct Attributes
         {
-            float4 positionOS : POSITION;
+            float4 vertex : POSITION;
             float2 uv : TEXCOORD0;
         };
 
         struct Varyings
         {
-            float4 positionHCS : SV_POSITION;
+            float4 cpos : SV_POSITION;
             float2 uv : TEXCOORD0;
         };
 
-        TEXTURE2D(_MainTex);
-
-        SAMPLER(sampler_MainTex);
+        Texture2D _MainTex;
+        SamplerState sampler_MainTex;
         float4 _MainTex_TexelSize;
         float4 _MainTex_ST;
 
@@ -46,15 +45,15 @@ Shader "Hidden/Box Blur"
         Varyings vert(Attributes IN)
         {
             Varyings OUT;
-            OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
-            OUT.uv = TRANSFORM_TEX(IN.uv, _MainTex);
+            OUT.cpos = TransformObjectToHClip(IN.vertex.xyz);
+            OUT.uv = IN.uv * _MainTex_ST.xy + _MainTex_ST.zw;
             return OUT;
         }
         ENDHLSL
 
         Pass
         {
-            Name "VERTICAL BOX BLUR"
+            Name "VERTICAL"
 
             HLSLPROGRAM
             half4 frag(Varyings IN) : SV_TARGET
@@ -62,22 +61,23 @@ Shader "Hidden/Box Blur"
                 float2 res = _MainTex_TexelSize.xy;
                 half4 sum = 0;
 
-                int samples = 2 * _BlurStrength + 1;
-
-                for (float y = 0; y < samples; y++)
+                for (float y = -_BlurStrength; y <= _BlurStrength; y++)
                 {
-                    float2 offset = float2(0, y - _BlurStrength);
-                    sum += SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv + offset * res);
+                    float2 offset = float2(0, y);
+                    half4 sample = _MainTex.Sample(sampler_MainTex, IN.uv + offset * res); 
+                    if(sample.a > 0) sum += half4(sample.rgb, 1.0); 
                 }
+
+                if(sum.a > 0) sum /= sum.a;
                 
-                return sum / samples;
+                return sum;
             }
             ENDHLSL
         }
 
         Pass
         {
-            Name "HORIZONTAL BOX BLUR"
+            Name "HORIZONTAL"
 
             HLSLPROGRAM
             half4 frag(Varyings IN) : SV_TARGET
@@ -85,15 +85,16 @@ Shader "Hidden/Box Blur"
                 float2 res = _MainTex_TexelSize.xy;
                 half4 sum = 0;
 
-                int samples = 2 * _BlurStrength + 1;
-
-                for (float x = 0; x < samples; x++)
+                for (float x = -_BlurStrength; x <= _BlurStrength; x++)
                 {
-                    float2 offset = float2(x - _BlurStrength, 0);
-                    sum += SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv + offset * res);
+                    float2 offset = float2(x, 0);
+                    half4 sample = _MainTex.Sample(sampler_MainTex, IN.uv + offset * res); 
+                    if(sample.a > 0) sum += half4(sample.rgb, 1.0); 
                 }
 
-                return sum / samples;
+                if(sum.a > 0) sum /= sum.a;
+                
+                return sum;
             }
             ENDHLSL
         }
