@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS_Toggle.uss?fileID=7433441132597879392&amp;guid=59f471ae057509944aa7dceb7ce47642&amp;type=3#USS_Toggle" />
+    <ui:VisualElement name="Container" style="border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); border-left-width: 10px; height: 75%; border-top-width: 10px;">
+        <ui:ScrollView name="ToggleOptions" style="width: 25%; height: 100%; left: 75%; border-left-width: 10px; border-right-width: 10px; border-top-width: 0; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); background-color: rgb(60, 60, 60);" />
+    </ui:VisualElement>
+    <ui:ScrollView name="DescriptionField" style="height: 25%; border-left-width: 10px; border-right-width: 10px; border-top-width: 10px; border-bottom-width: 10px; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); background-color: rgb(60, 60, 60); color: rgb(255, 255, 255);">
+        <ui:Label text="Label" display-tooltip-when-elided="true" name="Title" style="font-size: 30px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+        <ui:Label text="This is a test." display-tooltip-when-elided="true" name="Description" style="font-size: 15px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; left: auto; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+    </ui:ScrollView>
+</ui:UXML>

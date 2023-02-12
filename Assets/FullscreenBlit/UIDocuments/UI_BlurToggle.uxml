@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/FullscreenBlit/UIDocuments/UI_BlurStyleSheet.uss?fileID=7433441132597879392&amp;guid=2a55470805a7d8a458fede15f610aea5&amp;type=3#UI_BlurStyleSheet" />
+    <ui:VisualElement name="ToggleContainer" style="align-items: stretch; justify-content: flex-start; width: 100%; height: 100%; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); border-left-width: 10px; border-right-width: 10px;">
+        <ui:SliderInt picking-mode="Ignore" label="Blur Strength" value="5" high-value="20" name="BlurStrength" show-input-field="false" class="unity-slider-int" />
+        <ui:Button display-tooltip-when-elided="true" text="Reset" name="Reset" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: rgb(87, 87, 87); align-items: auto;" />
+    </ui:VisualElement>
+</ui:UXML>

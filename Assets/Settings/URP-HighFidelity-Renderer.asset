@@ -1,23 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-330894598124592978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46df216534dea8f4a8860f77d6cdcd3f, type: 3}
-  m_Name: Box Blur
-  m_EditorClassIdentifier: 
-  m_Active: 1
-  passSettings:
-    isEnabled: 1
-    renderPassEvent: 500
-    blitMaterial: {fileID: 2100000, guid: 61cb447123cb70844b95ca0e298e0ced, type: 2}
-    blurStrength: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34,8 +16,8 @@ MonoBehaviour:
     debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7,
       type: 3}
   m_RendererFeatures:
-  - {fileID: -330894598124592978}
-  m_RendererFeatureMap: ae20b0bc1d6d68fb
+  - {fileID: 4059126897340838834}
+  m_RendererFeatureMap: b2f33b2e68ea5438
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -75,3 +57,21 @@ MonoBehaviour:
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 1
+--- !u!114 &4059126897340838834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152cb38777d68d3428c1d9f896cefcab, type: 3}
+  m_Name: FullScreenBlurFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  passSettings:
+    isEnabled: 1
+    renderPassEvent: 500
+    blitShader: {fileID: 4800000, guid: f3c2627b7d897144392cd9ffdcb3db97, type: 3}
+    blurStrength: 3

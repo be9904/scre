@@ -1,0 +1,103 @@
+.unity-label {
+}
+
+.unity-toggle {
+    -unity-font: resource('FlatSkin/Font/Roboto-Black');
+    border-left-color: rgb(94, 94, 94);
+    border-right-color: rgb(94, 94, 94);
+    border-top-color: rgb(94, 94, 94);
+    border-bottom-color: rgb(94, 94, 94);
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom-width: 3px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+}
+
+.unity-slider {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    border-left-color: rgb(94, 94, 94);
+    border-right-color: rgb(94, 94, 94);
+    border-top-color: rgb(94, 94, 94);
+    border-bottom-color: rgb(94, 94, 94);
+    border-bottom-width: 3px;
+    color: rgb(255, 255, 255);
+}
+
+.unity-button {
+    -unity-text-align: upper-center;
+    width: auto;
+    font-size: 18px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -unity-font: resource('FlatSkin/Font/Roboto-Black');
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom-width: 3px;
+    border-left-color: rgb(61, 61, 61);
+    border-right-color: rgb(61, 61, 61);
+    border-top-color: rgb(61, 61, 61);
+    border-bottom-color: rgb(61, 61, 61);
+    color: rgb(255, 255, 255);
+}
+
+Toggle.unity-toggle:hover {
+    color: rgb(166, 166, 166);
+}
+
+Slider.unity-slider:hover {
+    color: rgb(166, 166, 166);
+}
+
+Button.unity-button:hover {
+    color: rgb(137, 137, 137);
+}
+
+.unity-toggle .unity-toggle__checkmark {
+    cursor: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-6090568113533005507&guid=ff8bcaaa9d21b194ca4ef76263ce4f67&type=3#check');
+}
+
+#unity-checkmark {
+    background-color: rgb(51, 51, 51);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-6090568113533005507&guid=ff8bcaaa9d21b194ca4ef76263ce4f67&type=3#check');
+    background-image: none;
+}
+
+.unity-slider-int {
+    font-size: 18px;
+    padding-bottom: 8px;
+    border-bottom-width: 3px;
+    border-left-color: rgb(94, 94, 94);
+    border-right-color: rgb(94, 94, 94);
+    border-top-color: rgb(94, 94, 94);
+    border-bottom-color: rgb(94, 94, 94);
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    color: rgb(255, 255, 255);
+}
+SliderInt.unity-slider-int:focus{
+    color : rgb(255, 0, 0);
+}
+
+#unity-text-input {
+    align-self: center;
+}
+
+TextField#unity-text-input {
+    background-color: rgba(36, 36, 36, 0.7);
+}

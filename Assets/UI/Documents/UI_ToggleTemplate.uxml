@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS_Toggle.uss?fileID=7433441132597879392&amp;guid=59f471ae057509944aa7dceb7ce47642&amp;type=3#USS_Toggle" />
+    <ui:Toggle label="Toggle" class="scre-toggle interactable unity-toggle__checkmark-background unity-toggle" style="overflow: visible;" />
+    <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="100" />
+    <ui:Slider picking-mode="Ignore" label="Slider" value="42" high-value="100" />
+    <ui:Button display-tooltip-when-elided="true" text="Button" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: rgb(87, 87, 87);" />
+</ui:UXML>

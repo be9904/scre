@@ -1,0 +1,15 @@
+.unity-slider-int:focus {
+    color: rgba(66, 255, 0, 255);
+    -unity-font: resource('FlatSkin/Font/Roboto-Black');
+    -unity-text-outline-color: rgba(0, 0, 0, 255);
+}
+
+.unity-slider-int {
+    -unity-text-outline-color: rgba(0, 0, 0, 255);
+    color: rgba(255, 255, 255, 255);
+    -unity-font: resource('FlatSkin/Font/Roboto-Black');
+}
+
+SliderInt.unity-slider-int:focus {
+    -unity-text-outline-color: rgba(255, 218, 0, 255);
+}
