@@ -15,7 +15,8 @@ public class BlurProgram : MonoBehaviour
     private Label title;
     private Label description;
     private SliderInt sliderUI;
-    private Button button;
+    private Button resetButton;
+    private Button returnButton;
     
     // Start is called before the first frame update
     void OnEnable()
@@ -25,7 +26,8 @@ public class BlurProgram : MonoBehaviour
         title = programUI.rootVisualElement.Q<Label>("Title");
         description = programUI.rootVisualElement.Q<Label>("Description");
         sliderUI = programUI.rootVisualElement.Q<SliderInt>("BlurStrength");
-        button = programUI.rootVisualElement.Q<Button>("Reset");
+        resetButton = programUI.rootVisualElement.Q<Button>("Reset");
+        returnButton = programUI.rootVisualElement.Q<Button>("Return");
 
         // initial values
         blurFeature.passSettings.blurStrength = 5;
@@ -38,17 +40,23 @@ public class BlurProgram : MonoBehaviour
             "The blit material performs vertical blur and horizontal blur respectively.";
         
         // register events
-        button.RegisterCallback<ClickEvent>(evt =>
+        sliderUI.RegisterCallback<ChangeEvent<int>>(evt =>
+        {
+            blurFeature.passSettings.blurStrength = evt.newValue;
+            blurFeature.Create();
+        });
+        
+        resetButton.RegisterCallback<ClickEvent>(evt =>
         {
             blurFeature.passSettings.blurStrength = 0;
             blurFeature.Create();
             sliderUI.value = 0;
         });
         
-        sliderUI.RegisterCallback<ChangeEvent<int>>(evt =>
+        returnButton.RegisterCallback<ClickEvent>(evt =>
         {
-            blurFeature.passSettings.blurStrength = evt.newValue;
-            blurFeature.Create();
+            Debug.Log("Go to main menu");
+            // return to list
         });
     }
 
