@@ -6,8 +6,10 @@
             <ui:Instance template="UI_BlurToggle" name="UI_BlurToggle" style="width: 25%; height: 100%; left: 75%; background-color: rgb(60, 60, 60);" />
         </ui:VisualElement>
         <ui:ScrollView name="DescriptionField" style="height: 25%; border-left-width: 10px; border-right-width: 10px; border-top-width: 10px; border-bottom-width: 10px; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); background-color: rgb(60, 60, 60); color: rgb(255, 255, 255);">
-            <ui:Label text="Title goes here" display-tooltip-when-elided="true" name="Title" style="font-size: 30px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
-            <ui:Label text="Write a description for the scene." display-tooltip-when-elided="true" name="Description" style="font-size: 15px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; left: auto; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label text="Title goes here" display-tooltip-when-elided="true" name="Title" style="font-size: 30px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);">
+                <ui:Button display-tooltip-when-elided="true" text="Reset" name="Reset" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: rgb(87, 87, 87); align-items: auto; width: 5%; height: 75%; left: 95%;" />
+            </ui:Label>
+            <ui:Label text="Write a description for the scene." display-tooltip-when-elided="true" name="Description" style="font-size: 15px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; left: auto; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); width: 2%;" />
         </ui:ScrollView>
     </ui:VisualElement>
 </ui:UXML>
