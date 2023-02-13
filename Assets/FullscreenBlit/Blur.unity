@@ -708,6 +708,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blurFeature: {fileID: 4059126897340838834, guid: c85429ff95020fc46bb666f7c097de85,
     type: 2}
+  testFloat:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 0}
+  testInt:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 0}
 --- !u!114 &1651619843
 MonoBehaviour:
   m_ObjectHideFlags: 0
