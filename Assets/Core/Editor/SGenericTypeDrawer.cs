@@ -4,10 +4,8 @@ using UnityEngine.Rendering.Universal;
 
 namespace Core.Editor
 {
-    [CustomPropertyDrawer(typeof(SFloat))]
-    [CustomPropertyDrawer(typeof(SInt))]
-    [CustomPropertyDrawer(typeof(SBool))]
-    public class SVarDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(SRPEvent))]
+    public class SGenericTypeDrawer : PropertyDrawer
     {
         /// <summary>
         /// Options to display in the popup to select constant or variable.

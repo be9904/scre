@@ -9,6 +9,9 @@ public class BlurProgram : MonoBehaviour
 {
     // Reference renderer feature asset
     [SerializeField] private FullScreenBlurFeature blurFeature;
+    
+    // Renderer feature options to tweak at runtime
+    [SerializeField] private SInt blurStrength;
 
     // UI Elements
     private UIDocument programUI;
@@ -17,7 +20,7 @@ public class BlurProgram : MonoBehaviour
     private SliderInt sliderUI;
     private Button resetButton;
     private Button returnButton;
-    
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -30,8 +33,7 @@ public class BlurProgram : MonoBehaviour
         returnButton = programUI.rootVisualElement.Q<Button>("Return");
 
         // initial values
-        blurFeature.passSettings.blurStrength = 5;
-        sliderUI.value = 5;
+        sliderUI.value = blurStrength.Variable.Value;
 
         // set text
         title.text = "Full Screen Box Blur";
@@ -42,15 +44,14 @@ public class BlurProgram : MonoBehaviour
         // register events
         sliderUI.RegisterCallback<ChangeEvent<int>>(evt =>
         {
-            blurFeature.passSettings.blurStrength = evt.newValue;
+            blurStrength.Variable.SetValue(evt.newValue);
+            Debug.Log("Slider: " + blurStrength.Variable.Value);
             blurFeature.Create();
         });
         
         resetButton.RegisterCallback<ClickEvent>(evt =>
         {
-            blurFeature.passSettings.blurStrength = 0;
-            blurFeature.Create();
-            sliderUI.value = 0;
+            ResetSettings();
         });
         
         returnButton.RegisterCallback<ClickEvent>(evt =>
@@ -60,10 +61,10 @@ public class BlurProgram : MonoBehaviour
         });
     }
 
-    private void OnDisable()
+    private void ResetSettings()
     {
-        blurFeature.passSettings.blurStrength = 5;
+        blurFeature.passSettings.blurStrength.Variable.SetValue(0);
         blurFeature.Create();
-        sliderUI.value = 5;
+        sliderUI.value = 0;
     }
 }

@@ -4,11 +4,12 @@ using UnityEngine.Rendering.Universal;
 [System.Serializable]
 public class FullScreenBlurSettings
 {
-    public bool isEnabled = true;
-    public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
+    public RenderPassEvent renderPassEvent;
     public Shader blitShader;
 
-    [Range(0, 20)] public int blurStrength = 5;
+    // runtime options
+    public SBool isEnabled;
+    public SInt blurStrength;
 }
 
 public class FullScreenBlurFeature : ScriptableRendererFeature

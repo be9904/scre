@@ -71,7 +71,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   passSettings:
-    isEnabled: 1
     renderPassEvent: 500
     blitShader: {fileID: 4800000, guid: f3c2627b7d897144392cd9ffdcb3db97, type: 3}
-    blurStrength: 3
+    isEnabled:
+      isConstant: 0
+      ConstantValue: 0
+      Variable: {fileID: 11400000, guid: 2ef25d0416f781b44a8e1826cce80fef, type: 2}
+    blurStrength:
+      isConstant: 0
+      ConstantValue: 0
+      Variable: {fileID: 11400000, guid: ff3f8dab0598676459ce3ce7bf249c9d, type: 2}

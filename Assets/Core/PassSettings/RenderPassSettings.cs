@@ -1,18 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RenderPassSettings : MonoBehaviour
+[CreateAssetMenu(menuName = "Render Pass Settings")]
+public class RenderPassSettings : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // remove if unnecessary
 }
