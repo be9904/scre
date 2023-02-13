@@ -28,8 +28,8 @@ public class BlurProgram : MonoBehaviour
         button = programUI.rootVisualElement.Q<Button>("Reset");
 
         // initial values
-        blurFeature.passSettings.blurStrength = 0;
-        sliderUI.value = 0;
+        blurFeature.passSettings.blurStrength = 5;
+        sliderUI.value = 5;
 
         // set text
         title.text = "Full Screen Box Blur";
@@ -50,5 +50,12 @@ public class BlurProgram : MonoBehaviour
             blurFeature.passSettings.blurStrength = evt.newValue;
             blurFeature.Create();
         });
+    }
+
+    private void OnDisable()
+    {
+        blurFeature.passSettings.blurStrength = 5;
+        blurFeature.Create();
+        sliderUI.value = 5;
     }
 }
