@@ -13,7 +13,7 @@
             <ui:Label text="Title goes here" display-tooltip-when-elided="true" name="Title" style="font-size: 50px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); -unity-text-align: middle-left; height: 75%;">
                 <ui:Button display-tooltip-when-elided="true" text="Return" name="Return" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: rgb(87, 87, 87); align-items: auto; width: 5%; height: 50%; left: 94.5%; font-size: 15px; -unity-text-align: middle-center;" />
             </ui:Label>
-            <ui:Label text="Write a description for the scene." display-tooltip-when-elided="true" name="Description" style="font-size: 20px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; left: auto; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
+            <ui:Label text="Write a description for the scene." display-tooltip-when-elided="true" name="Description" style="font-size: 25px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; left: auto; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
         </ui:ScrollView>
     </ui:VisualElement>
 </ui:UXML>
