@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -62,6 +63,12 @@ public class BlurProgram : MonoBehaviour
             Debug.Log("Go to main menu");
             // return to list
         });
+    }
+
+    private void OnDisable()
+    {
+        // disable renderer feature
+        blurFeature.SetActive(false);
     }
 
     private void ResetSettings()

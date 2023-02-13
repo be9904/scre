@@ -1,7 +1,3 @@
-// Two-pass box blur shader created for URP 12 and Unity 2021.2
-// Made by Alexander Ameye 
-// https://alexanderameye.github.io/
-
 Shader "Hidden/Box Blur"
 {
     Properties

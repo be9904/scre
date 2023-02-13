@@ -1,11 +1,11 @@
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
 [System.Serializable]
 public class FullScreenRTSettings
 {
     public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
+    public Shader blitShader;
     public ComputeShader computeShader;
     
     // runtime options
@@ -15,7 +15,7 @@ public class FullScreenRTSettings
 public class FullScreenRTFeature : ScriptableRendererFeature
 {
     FullScreenRTPass rtPass;
-    FullScreenRTSettings passSettings = new FullScreenRTSettings();
+    public FullScreenRTSettings passSettings = new FullScreenRTSettings();
 
     /// <inheritdoc/>
     public override void Create()

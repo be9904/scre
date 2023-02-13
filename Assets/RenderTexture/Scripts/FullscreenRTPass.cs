@@ -8,14 +8,36 @@ public class FullScreenRTPass : ScriptableRenderPass
     
     private RenderTargetIdentifier cameraColorTargetIdent;
 
+    private Material blitMaterial;
     private ComputeShader computeShader;
     private int kernelID;
     private RenderTexture outputRT;
-    
+
     public FullScreenRTPass(string profilerTag, FullScreenRTSettings passSettings)
     {
-        kernelID = passSettings.kernelID;
+        this.profilerTag = profilerTag;
+        kernelID = passSettings.kernelID.Value;
+        blitMaterial = new Material(passSettings.blitShader);
         computeShader = passSettings.computeShader;
+        
+        // draw on render texture
+        outputRT = new RenderTexture(512, 512, 24)
+        {
+            enableRandomWrite = true
+        };
+        outputRT.Create();
+        
+        computeShader.SetFloat("Resolution", outputRT.width);
+        
+        Debug.Log("Dispatch Kernel ID: " + kernelID);
+        
+        computeShader.SetTexture(kernelID, "Result", outputRT);
+        computeShader.Dispatch(
+            kernelID, 
+            outputRT.width / 8, 
+            outputRT.height / 8, 
+            1
+        );
     }
 
     public void Setup(RenderTargetIdentifier cameraColorTargetIdent)
@@ -30,22 +52,7 @@ public class FullScreenRTPass : ScriptableRenderPass
     // The render pipeline will ensure target setup and clearing happens in a performant manner.
     public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
     {
-        // draw on render texture
-        outputRT = new RenderTexture(512, 512, 24)
-        {
-            enableRandomWrite = true
-        };
-        outputRT.Create();
         
-        computeShader.SetFloat("Resolution", outputRT.width);
-        
-        computeShader.SetTexture(kernelID, "Result", outputRT);
-        computeShader.Dispatch(
-            kernelID, 
-            outputRT.width / 8, 
-            outputRT.height / 8, 
-            1
-        );
     }
 
     // Here you can implement the rendering logic.
@@ -57,7 +64,7 @@ public class FullScreenRTPass : ScriptableRenderPass
         CommandBuffer cmd = CommandBufferPool.Get();
         cmd.Clear();
         
-        cmd.Blit(outputRT, cameraColorTargetIdent);
+        cmd.Blit(outputRT, cameraColorTargetIdent, blitMaterial, 0);
         
         context.ExecuteCommandBuffer(cmd);
         

@@ -17,7 +17,8 @@ MonoBehaviour:
       type: 3}
   m_RendererFeatures:
   - {fileID: 4059126897340838834}
-  m_RendererFeatureMap: b2f33b2e68ea5438
+  - {fileID: 1447307670743079556}
+  m_RendererFeatureMap: b2f33b2e68ea543884da568ba8de1514
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -57,6 +58,27 @@ MonoBehaviour:
   m_ClusteredRendering: 0
   m_TileSize: 32
   m_IntermediateTextureMode: 1
+--- !u!114 &1447307670743079556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f733f265d91a8946a03c55ea693b491, type: 3}
+  m_Name: FullScreenRTFeature
+  m_EditorClassIdentifier: 
+  m_Active: 0
+  passSettings:
+    renderPassEvent: 500
+    blitShader: {fileID: 4800000, guid: 1a07266a8f84a314fb2469f8a1f4d16f, type: 3}
+    computeShader: {fileID: 7200000, guid: ca8bca014a104fa4e908785601b354f4, type: 3}
+    kernelID:
+      isConstant: 0
+      ConstantValue: 0
+      Variable: {fileID: 11400000, guid: 617c5cccbd9c92f43a48fbef2b1853f8, type: 2}
 --- !u!114 &4059126897340838834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +91,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152cb38777d68d3428c1d9f896cefcab, type: 3}
   m_Name: FullScreenBlurFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   passSettings:
     renderPassEvent: 500
     blitShader: {fileID: 4800000, guid: f3c2627b7d897144392cd9ffdcb3db97, type: 3}
