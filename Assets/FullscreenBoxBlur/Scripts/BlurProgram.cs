@@ -49,8 +49,8 @@ public class BlurProgram : MonoBehaviour
         // set text
         title.text = "Full Screen Box Blur";
         description.text = 
-            "A full screen box blur effect implemented with URP custom renderer feature. " +
-            "The blit material performs vertical blur and horizontal blur respectively.";
+            "A full screen box blur effect implemented with URP custom renderer feature.\n\n" +
+            "The blit material performs vertical blur and horizontal blur respectively.\n\n";
         
         // register events
         slider.RegisterCallback<ChangeEvent<int>>(evt =>

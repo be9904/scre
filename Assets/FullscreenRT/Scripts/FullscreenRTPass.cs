@@ -5,8 +5,7 @@ using UnityEngine.Rendering.Universal;
 public class FullScreenRTPass : ScriptableRenderPass
 {
     private string profilerTag;
-
-    private RenderTargetIdentifier destination;
+    
     private RenderTargetIdentifier cameraColorTargetIdent;
 
     // private Material blitMaterial;
@@ -23,22 +22,7 @@ public class FullScreenRTPass : ScriptableRenderPass
         // blitMaterial = new Material(passSettings.blitShader);
         computeShader = passSettings.computeShader;
         
-        // draw on render texture
-        outputRT = new RenderTexture(2048, 2048, 24)
-        {
-            enableRandomWrite = true
-        };
-        outputRT.Create();
-        
-        computeShader.SetFloat("Resolution", outputRT.width);
-
-        computeShader.SetTexture(kernelID, "Result", outputRT);
-        computeShader.Dispatch(
-            kernelID, 
-            outputRT.width / 8, 
-            outputRT.height / 8, 
-            1
-        );
+        DispatchComputeShader();
     }
 
     public void Setup(RenderTargetIdentifier cameraColorTargetIdent)
@@ -60,5 +44,25 @@ public class FullScreenRTPass : ScriptableRenderPass
         
         cmd.Clear();
         CommandBufferPool.Release(cmd);
+    }
+
+    void DispatchComputeShader()
+    {
+        // draw on render texture
+        outputRT = new RenderTexture(2048, 2048, 24)
+        {
+            enableRandomWrite = true
+        };
+        outputRT.Create();
+        
+        computeShader.SetFloat("Resolution", outputRT.width);
+
+        computeShader.SetTexture(kernelID, "Result", outputRT);
+        computeShader.Dispatch(
+            kernelID, 
+            outputRT.width / 8, 
+            outputRT.height / 8, 
+            1
+        );
     }
 }

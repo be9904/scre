@@ -37,11 +37,6 @@ public class FullScreenRTFeature : ScriptableRendererFeature
         
         renderer.EnqueuePass(rtPass);
     }
-
-    public void SetComputeShader(ComputeShader computeShader)
-    {
-        passSettings.computeShader = computeShader;
-    }
 }
 
 

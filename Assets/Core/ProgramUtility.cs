@@ -32,4 +32,15 @@ public static class ProgramUtility
         // update maincam pixel rect
         mainCam.pixelRect = new Rect(pos.x, pos.y, scale.x, scale.y);
     }
+    
+    public static Texture2D RTtoTex2D(RenderTexture rt)
+    {
+        Texture2D outputTex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, true);
+        
+        RenderTexture.active = rt;
+        outputTex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+        outputTex.Apply();
+        
+        return outputTex;
+    }
 }

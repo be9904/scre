@@ -2,24 +2,45 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
+[System.Serializable]
+public class MipSettings
+{
+    public RenderPassEvent renderPassEvent;
+    public ComputeShader computeShader;
+    public Texture2D image;
+    
+    // runtime options
+    public SInt mipLevel;
+}
+
 public class MipFeature : ScriptableRendererFeature
 {
-    MipPass m_ScriptablePass;
+    MipPass mipPass;
+    public MipSettings passSettings;
 
     /// <inheritdoc/>
     public override void Create()
     {
-        m_ScriptablePass = new MipPass();
+        Shader.SetGlobalTexture("_MIP", passSettings.image);
+        
+        mipPass = new MipPass(
+            "Mipmap Render pass",
+            passSettings
+        );
 
         // Configures where the render pass should be injected.
-        m_ScriptablePass.renderPassEvent = RenderPassEvent.AfterRenderingOpaques;
+        mipPass.renderPassEvent = RenderPassEvent.AfterRenderingOpaques;
     }
 
     // Here you can inject one or multiple render passes in the renderer.
     // This method is called when setting up the renderer once per-camera.
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        renderer.EnqueuePass(m_ScriptablePass);
+        ref CameraData cameraData = ref renderingData.cameraData; 
+        RenderTargetIdentifier cameraColorTarget = cameraData.renderer.cameraColorTarget;
+        mipPass.Setup(cameraColorTarget);
+        
+        renderer.EnqueuePass(mipPass);
     }
 }
 
