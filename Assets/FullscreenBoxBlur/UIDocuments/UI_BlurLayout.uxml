@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="UI_BlurToggle" src="project://database/Assets/FullscreenBlit/UIDocuments/UI_BlurToggle.uxml?fileID=9197481963319205126&amp;guid=279cd5916c30b20469d33cd2281e7a74&amp;type=3#UI_BlurToggle" />
+    <ui:Template name="UI_BlurToggle" src="project://database/Assets/FullscreenBoxBlur/UIDocuments/UI_BlurToggle.uxml?fileID=9197481963319205126&amp;guid=279cd5916c30b20469d33cd2281e7a74&amp;type=3#UI_BlurToggle" />
     <Style src="project://database/Assets/UI/Documents/USS_Toggle.uss?fileID=7433441132597879392&amp;guid=59f471ae057509944aa7dceb7ce47642&amp;type=3#USS_Toggle" />
     <ui:VisualElement name="UI_MainDocument" style="width: 100%; height: 100%;">
         <ui:VisualElement name="Container" style="border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); border-left-width: 10px; height: 75%; border-top-width: 10px;">
@@ -8,10 +8,10 @@
             </ui:Instance>
         </ui:VisualElement>
         <ui:ScrollView name="DescriptionField" style="height: 25%; border-left-width: 10px; border-right-width: 10px; border-top-width: 10px; border-bottom-width: 10px; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); background-color: rgb(60, 60, 60); color: rgb(255, 255, 255);">
-            <ui:Label text="Title goes here" display-tooltip-when-elided="true" name="Title" style="font-size: 30px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);">
-                <ui:Button display-tooltip-when-elided="true" text="Return" name="Return" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: rgb(87, 87, 87); align-items: auto; width: 5%; height: 75%; left: 95%; font-size: 15px;" />
+            <ui:Label text="Title goes here" display-tooltip-when-elided="true" name="Title" style="font-size: 50px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); -unity-text-align: middle-left; height: 75%;">
+                <ui:Button display-tooltip-when-elided="true" text="Return" name="Return" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: rgb(87, 87, 87); align-items: auto; width: 5%; height: 50%; left: 94.5%; font-size: 15px; -unity-text-align: middle-center;" />
             </ui:Label>
-            <ui:Label text="Write a description for the scene." display-tooltip-when-elided="true" name="Description" style="font-size: 15px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; left: auto; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); width: 2%;" />
+            <ui:Label text="Write a description for the scene." display-tooltip-when-elided="true" name="Description" style="font-size: 20px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; left: auto; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;);" />
         </ui:ScrollView>
     </ui:VisualElement>
 </ui:UXML>

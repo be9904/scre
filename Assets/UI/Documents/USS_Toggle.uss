@@ -1,4 +1,5 @@
 .unity-label {
+    -unity-font: resource('FlatSkin/Font/Roboto-Black');
 }
 
 .unity-toggle {
@@ -90,8 +91,9 @@ Button.unity-button:hover {
     padding-top: 8px;
     color: rgb(255, 255, 255);
 }
-SliderInt.unity-slider-int:focus{
-    color : rgb(255, 0, 0);
+
+SliderInt.unity-slider-int:focus {
+    color: rgb(255, 0, 0);
 }
 
 #unity-text-input {

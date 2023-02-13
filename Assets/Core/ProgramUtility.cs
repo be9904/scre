@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ProgramUtility
+public static class ProgramUtility
 {
     public static void AlignView(Camera mainCam)
     {
