@@ -5,7 +5,8 @@ using UnityEngine.Rendering.Universal;
 public class FullScreenRTPass : ScriptableRenderPass
 {
     private string profilerTag;
-    
+
+    private RenderTargetIdentifier destination;
     private RenderTargetIdentifier cameraColorTargetIdent;
 
     private Material blitMaterial;
@@ -50,9 +51,12 @@ public class FullScreenRTPass : ScriptableRenderPass
     // When empty this render pass will render to the active camera render target.
     // You should never call CommandBuffer.SetRenderTarget. Instead call <c>ConfigureTarget</c> and <c>ConfigureClear</c>.
     // The render pipeline will ensure target setup and clearing happens in a performant manner.
-    public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
+    public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
     {
-        
+        RenderTextureDescriptor descriptor = cameraTextureDescriptor;
+
+        cmd.GetTemporaryRT(Shader.PropertyToID("Result"), descriptor);
+        destination = new RenderTargetIdentifier("Result");
     }
 
     // Here you can implement the rendering logic.
@@ -64,8 +68,8 @@ public class FullScreenRTPass : ScriptableRenderPass
         CommandBuffer cmd = CommandBufferPool.Get();
         cmd.Clear();
         
-        cmd.Blit(outputRT, cameraColorTargetIdent, blitMaterial, 0);
-        
+        cmd.Blit(destination, Shader.PropertyToID("_CameraColorAttachmentA"), blitMaterial, 0);
+
         context.ExecuteCommandBuffer(cmd);
         
         cmd.Clear();
@@ -75,6 +79,6 @@ public class FullScreenRTPass : ScriptableRenderPass
     // Cleanup any allocated resources that were created during the execution of this render pass.
     public override void OnCameraCleanup(CommandBuffer cmd)
     {
-        outputRT.Release();
+        cmd.ReleaseTemporaryRT(Shader.PropertyToID("Result"));
     }
 }
