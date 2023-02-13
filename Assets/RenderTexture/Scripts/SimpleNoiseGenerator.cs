@@ -10,8 +10,10 @@ public class SimpleNoiseGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        renderTexture = new RenderTexture(512, 512, 24);
-        renderTexture.enableRandomWrite = true;
+        renderTexture = new RenderTexture(512, 512, 24)
+        {
+            enableRandomWrite = true
+        };
         renderTexture.Create();
         
         computeShader.SetFloat("Resolution", renderTexture.width);

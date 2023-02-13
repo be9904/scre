@@ -4,14 +4,18 @@ using UnityEngine.Rendering.Universal;
 
 public class FullScreenRTPass : ScriptableRenderPass
 {
-    Material blitMaterial;
-    private RenderTargetIdentifier cameraColorTargetIdent;
+    private string profilerTag;
     
-    public FullScreenRTPass(FullScreenRTSettings passSettings)
+    private RenderTargetIdentifier cameraColorTargetIdent;
+
+    private ComputeShader computeShader;
+    private int kernelID;
+    private RenderTexture outputRT;
+    
+    public FullScreenRTPass(string profilerTag, FullScreenRTSettings passSettings)
     {
-        blitMaterial = passSettings.blitMaterial;
-        
-        // set material properties
+        kernelID = passSettings.kernelID;
+        computeShader = passSettings.computeShader;
     }
 
     public void Setup(RenderTargetIdentifier cameraColorTargetIdent)
@@ -26,6 +30,22 @@ public class FullScreenRTPass : ScriptableRenderPass
     // The render pipeline will ensure target setup and clearing happens in a performant manner.
     public override void OnCameraSetup(CommandBuffer cmd, ref RenderingData renderingData)
     {
+        // draw on render texture
+        outputRT = new RenderTexture(512, 512, 24)
+        {
+            enableRandomWrite = true
+        };
+        outputRT.Create();
+        
+        computeShader.SetFloat("Resolution", outputRT.width);
+        
+        computeShader.SetTexture(kernelID, "Result", outputRT);
+        computeShader.Dispatch(
+            kernelID, 
+            outputRT.width / 8, 
+            outputRT.height / 8, 
+            1
+        );
     }
 
     // Here you can implement the rendering logic.
@@ -34,10 +54,20 @@ public class FullScreenRTPass : ScriptableRenderPass
     // You don't have to call ScriptableRenderContext.submit, the render pipeline will call it at specific points in the pipeline.
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
+        CommandBuffer cmd = CommandBufferPool.Get();
+        cmd.Clear();
+        
+        cmd.Blit(outputRT, cameraColorTargetIdent);
+        
+        context.ExecuteCommandBuffer(cmd);
+        
+        cmd.Clear();
+        CommandBufferPool.Release(cmd);
     }
 
     // Cleanup any allocated resources that were created during the execution of this render pass.
     public override void OnCameraCleanup(CommandBuffer cmd)
     {
+        outputRT.Release();
     }
 }

@@ -2,38 +2,36 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(UIDocument))]
-public class BlurProgram : MonoBehaviour
+public class RTProgram : MonoBehaviour
 {
     // Reference renderer feature asset
-    [SerializeField] private FullScreenBlurFeature blurFeature;
+    [SerializeField] private FullScreenRTFeature RTFeature;
     
     // Renderer feature options to tweak at runtime
-    [SerializeField] private SInt blurStrength;
+    [SerializeField] private SInt kernelID;
 
     // UI Elements
     private UIDocument programUI;
     private Label title;
     private Label description;
     private SliderInt sliderUI;
-    private Button resetButton;
     private Button returnButton;
 
     // Start is called before the first frame update
     void OnEnable()
     {
         // set renderer feature active
-        blurFeature.SetActive(true);
+        RTFeature.SetActive(true);
         
         // bind UI elements
         programUI = GetComponent<UIDocument>();
         title = programUI.rootVisualElement.Q<Label>("Title");
         description = programUI.rootVisualElement.Q<Label>("Description");
         sliderUI = programUI.rootVisualElement.Q<SliderInt>("BlurStrength");
-        resetButton = programUI.rootVisualElement.Q<Button>("Reset");
         returnButton = programUI.rootVisualElement.Q<Button>("Return");
 
         // initial values
-        sliderUI.value = blurStrength.Variable.Value;
+        sliderUI.value = kernelID.Variable.Value;
 
         // set text
         title.text = "Full Screen Box Blur";
@@ -44,30 +42,16 @@ public class BlurProgram : MonoBehaviour
         // register events
         sliderUI.RegisterCallback<ChangeEvent<int>>(evt =>
         {
-            blurStrength.Variable.SetValue(evt.newValue);
-            Debug.Log("Slider: " + blurStrength.Variable.Value);
-            blurFeature.Create();
+            kernelID.Variable.SetValue(evt.newValue);
+            Debug.Log("Slider: " + kernelID.Variable.Value);
+            RTFeature.Create();
         });
-        
-        resetButton.RegisterCallback<ClickEvent>(evt =>
-        {
-            ResetSettings();
-        });
-        
+
         returnButton.RegisterCallback<ClickEvent>(evt =>
         {
-            // disable renderer feature
-            blurFeature.SetActive(false);
-            
+            RTFeature.SetActive(false);
             Debug.Log("Go to main menu");
             // return to list
         });
-    }
-
-    private void ResetSettings()
-    {
-        blurStrength.Variable.SetValue(0);
-        blurFeature.Create();
-        sliderUI.value = 0;
     }
 }

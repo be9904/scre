@@ -5,8 +5,11 @@ using UnityEngine.Rendering.Universal;
 [System.Serializable]
 public class FullScreenRTSettings
 {
-    public Material blitMaterial;
+    public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
     public ComputeShader computeShader;
+    
+    // runtime options
+    public SInt kernelID;
 }
 
 public class FullScreenRTFeature : ScriptableRendererFeature
@@ -17,10 +20,10 @@ public class FullScreenRTFeature : ScriptableRendererFeature
     /// <inheritdoc/>
     public override void Create()
     {
-        rtPass = new FullScreenRTPass(passSettings);
-
-        // Configures where the render pass should be injected.
-        rtPass.renderPassEvent = RenderPassEvent.AfterRenderingOpaques;
+        rtPass = new FullScreenRTPass(
+            "Fullscreen Render Texture",
+            passSettings
+        );
     }
 
     // Here you can inject one or multiple render passes in the renderer.
