@@ -23,8 +23,6 @@ public class FullScreenBlurRenderPass : ScriptableRenderPass
         blitMaterial.SetInt(_blurStrength, passSettings.blurStrength.Value);
     }
     
-    // This isn't part of the ScriptableRenderPass class and is our own addition.
-    // For this custom pass we need the camera's color target, so that gets passed in.
     public void Setup(RenderTargetIdentifier cameraColorTargetIdent)
     {
         this.cameraColorTargetIdent = cameraColorTargetIdent;
@@ -40,24 +38,17 @@ public class FullScreenBlurRenderPass : ScriptableRenderPass
     // Here you can implement the rendering logic.
     // Use <c>ScriptableRenderContext</c> to issue drawing commands or execute command buffers
     // https://docs.unity3d.com/ScriptReference/Rendering.ScriptableRenderContext.html
-    // You don't have to call ScriptableRenderContext.submit, the render pipeline will call it at specific points in the pipeline.
     public override void Execute(ScriptableRenderContext context, ref RenderingData renderingData)
     {
         // fetch a command buffer to use
         CommandBuffer cmd = CommandBufferPool.Get(profilerTag);
         cmd.Clear();
-
-        // the actual content of our custom render pass!
-        // we apply our material while blitting to a temporary texture
+        
         cmd.Blit(cameraColorTargetIdent, tempTexture.Identifier(), blitMaterial, 0);
-
-        // ...then blit it back again 
         cmd.Blit(tempTexture.Identifier(), cameraColorTargetIdent, blitMaterial, 1);
-
-        // don't forget to tell ScriptableRenderContext to actually execute the commands
+        
         context.ExecuteCommandBuffer(cmd);
-
-        // tidy up after ourselves
+        
         cmd.Clear();
         CommandBufferPool.Release(cmd);
     }

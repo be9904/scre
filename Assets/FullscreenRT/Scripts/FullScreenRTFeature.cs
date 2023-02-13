@@ -5,8 +5,8 @@ using UnityEngine.Rendering.Universal;
 [System.Serializable]
 public class FullScreenRTSettings
 {
-    public RenderPassEvent renderPassEvent = RenderPassEvent.AfterRenderingTransparents;
-    public Shader blitShader;
+    public RenderPassEvent renderPassEvent;
+    // public Shader blitShader;
     public ComputeShader computeShader;
     
     // runtime options

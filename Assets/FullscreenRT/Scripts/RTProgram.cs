@@ -13,20 +13,33 @@ public class RTProgram : MonoBehaviour
     [SerializeField] private SInt kernelID;
 
     // UI Elements
-    private UIDocument programUI;
-    private Label title;
-    private Label description;
-    private DropdownField dropdown;
-    private Button returnButton;
+    private UIDocument      programUI;
+    private Label           title;
+    private Label           description;
+    private DropdownField   dropdown;
+    private List<string>    dropdownOptions = new List<string>{"Noise", "UV"};
+    private Button          returnButton;
 
-    private List<string> dropdownOptions = new List<string>{"UV", "Noise"};
-
-    // Start is called before the first frame update
     void OnEnable()
     {
+        // cache main camera
+        ProgramUtility.AlignView(Camera.main);
+        
         // set renderer feature active
         RTFeature.SetActive(true);
         
+        // bind UI
+        BindUIElements();
+    }
+    
+    private void OnDisable()
+    {
+        // disable renderer feature
+        RTFeature.SetActive(false);
+    }
+
+    void BindUIElements()
+    {
         // bind UI elements
         programUI = GetComponent<UIDocument>();
         title = programUI.rootVisualElement.Q<Label>("Title");
@@ -36,8 +49,8 @@ public class RTProgram : MonoBehaviour
 
         // initial values
         dropdown.choices = dropdownOptions;
-        dropdown.value = dropdownOptions[kernelID.Variable.Value];
-        dropdown.index = kernelID.Variable.Value;
+        dropdown.value = dropdownOptions[kernelID.Value];
+        dropdown.index = kernelID.Value;
 
         // set text
         title.text = "Full Screen Render Textures";
@@ -50,26 +63,19 @@ public class RTProgram : MonoBehaviour
         // register events
         dropdown.RegisterCallback<ChangeEvent<string>>(evt =>
         {
-            // debug here ********
             int updateIndex = dropdownOptions.FindIndex(str => str == evt.newValue);
             kernelID.Variable.SetValue(updateIndex);
             dropdown.value = dropdownOptions[updateIndex];
             dropdown.index = updateIndex;
-            Debug.Log("Kernel ID: " + kernelID.Variable.Value);
             RTFeature.Create();
         });
 
         returnButton.RegisterCallback<ClickEvent>(evt =>
         {
             RTFeature.SetActive(false);
+            
             Debug.Log("Go to main menu");
             // return to list
         });
-    }
-
-    private void OnDisable()
-    {
-        // disable renderer feature
-        RTFeature.SetActive(false);
     }
 }

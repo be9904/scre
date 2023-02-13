@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   passSettings:
-    renderPassEvent: 500
+    renderPassEvent: 300
     blitShader: {fileID: 4800000, guid: 1a07266a8f84a314fb2469f8a1f4d16f, type: 3}
     computeShader: {fileID: 7200000, guid: ca8bca014a104fa4e908785601b354f4, type: 3}
     kernelID:
