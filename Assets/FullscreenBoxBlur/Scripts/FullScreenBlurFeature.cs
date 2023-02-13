@@ -14,13 +14,13 @@ public class FullScreenBlurSettings
 
 public class FullScreenBlurFeature : ScriptableRendererFeature
 {
-    FullScreenBlurRenderPass fullscreenPass;
+    FullScreenBlurPass fullscreenPass;
     public FullScreenBlurSettings passSettings = new FullScreenBlurSettings();
 
     /// <inheritdoc/>
     public override void Create()
     {
-        fullscreenPass = new FullScreenBlurRenderPass(
+        fullscreenPass = new FullScreenBlurPass(
             "Fullscreen Pass",
             passSettings
         );

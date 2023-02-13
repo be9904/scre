@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="UI_ToggleTemplate">
+        <Style src="project://database/Assets/UI/Documents/USS_Toggle.uss?fileID=7433441132597879392&amp;guid=59f471ae057509944aa7dceb7ce47642&amp;type=3#USS_Toggle" />
+        <ui:SliderInt picking-mode="Ignore" label="SliderInt" value="42" high-value="100" class="unity-slider-int" />
+    </ui:VisualElement>
+</ui:UXML>

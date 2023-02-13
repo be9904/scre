@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-public class FullScreenBlurRenderPass : ScriptableRenderPass
+public class FullScreenBlurPass : ScriptableRenderPass
 {
     // used to label this pass in Unity's Frame Debug utility
     string profilerTag;
@@ -14,7 +13,7 @@ public class FullScreenBlurRenderPass : ScriptableRenderPass
 
     private static readonly int _blurStrength = Shader.PropertyToID("_BlurStrength");
 
-    public FullScreenBlurRenderPass(string profilerTag, 
+    public FullScreenBlurPass(string profilerTag, 
         FullScreenBlurSettings passSettings)
     {
         this.profilerTag = profilerTag;
