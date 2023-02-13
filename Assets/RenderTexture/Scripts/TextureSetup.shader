@@ -13,6 +13,31 @@ Shader "Hidden/TextureSetup"
 
         Pass
         {
+            Name "Clear Texture Buffer"
+            
+            HLSLPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+
+            struct Attributes
+            {
+                float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
+            };
+
+            struct Varyings
+            {
+                float4 cpos : SV_POSITION;
+                float2 uv : TEXCOORD0;
+            };
+            
+            ENDHLSL
+        }
+        
+        Pass
+        {
             Name "Render Texture UV"
 
             HLSLPROGRAM
