@@ -40,7 +40,7 @@ public class MipmapProgram : MonoBehaviour
         BindUIElements();
         
         // initial run to match image index
-        mipFeature.Create();
+        mipFeature.passSettings.inputTexture = images[imageIndex];
     }
     
     private void OnDisable()

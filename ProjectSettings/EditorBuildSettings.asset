@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/FullscreenBoxBlur/BoxBlur.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
+  - enabled: 0
     path: Assets/FullscreenRT/FullscreenRT.unity
     guid: c7ba991df0af73f458a8ae07874178f0
-  - enabled: 0
+  - enabled: 1
     path: Assets/MipmapGenerator/MipmapGenerator.unity
     guid: 62eade0c771a0a94185c5e1883585a10
   m_configObjects: {}
