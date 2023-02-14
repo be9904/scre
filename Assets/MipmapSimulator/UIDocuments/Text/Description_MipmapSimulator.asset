@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4364db4e59d5064a8c1ca5fb6c19e4a, type: 3}
+  m_Name: Description_MipmapSimulator
+  m_EditorClassIdentifier: 
+  Value: 'This is an example of a mipmap simulator, generated with compute shaders.
+
+
+    You
+    can change the mip level to see what happens to the texture.
+
+
+    This texture
+    is a 1K texture, and is displayed using fullscreen blit.
+
+
+'

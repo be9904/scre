@@ -7,6 +7,7 @@ namespace Core.Editor
     [CustomPropertyDrawer(typeof(SFloat))]
     [CustomPropertyDrawer(typeof(SInt))]
     [CustomPropertyDrawer(typeof(SBool))]
+    [CustomPropertyDrawer(typeof(SText))]
     public class SVarDrawer : PropertyDrawer
     {
         /// <summary>

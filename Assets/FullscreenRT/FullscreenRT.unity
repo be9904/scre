@@ -250,8 +250,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 777074874}
-  - component: {fileID: 777074876}
   - component: {fileID: 777074875}
+  - component: {fileID: 777074876}
   m_Layer: 0
   m_Name: Program
   m_TagString: Untagged
@@ -292,6 +292,14 @@ MonoBehaviour:
     isConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 617c5cccbd9c92f43a48fbef2b1853f8, type: 2}
+  titleText:
+    isConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: ca23d2e175ee410498e4b7e41331407a, type: 2}
+  descriptionText:
+    isConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: d7feb7cef6f447b43ac7f955a937ef13, type: 2}
 --- !u!114 &777074876
 MonoBehaviour:
   m_ObjectHideFlags: 0

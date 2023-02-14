@@ -17,6 +17,9 @@ public class BlurProgram : MonoBehaviour
     private SliderInt       slider;
     private Button          resetButton;
     private Button          returnButton;
+
+    [SerializeField] private SText titleText;
+    [SerializeField] private SText descriptionText;
     
     void OnEnable()
     {
@@ -47,10 +50,8 @@ public class BlurProgram : MonoBehaviour
         slider.value = blurStrength.Value;
 
         // set text
-        title.text = "Full Screen Box Blur";
-        description.text = 
-            "A full screen box blur effect implemented with URP custom renderer feature.\n\n" +
-            "The blit material performs vertical blur and horizontal blur respectively.\n\n";
+        title.text = titleText.Value;
+        description.text = descriptionText.Value;
         
         // register events
         slider.RegisterCallback<ChangeEvent<int>>(evt =>

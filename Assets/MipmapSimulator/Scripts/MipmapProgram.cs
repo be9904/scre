@@ -19,6 +19,9 @@ public class MipmapProgram : MonoBehaviour
     private SliderInt       slider;
     private Button          resetButton;
     private Button          returnButton;
+    
+    [SerializeField] private SText titleText;
+    [SerializeField] private SText descriptionText;
 
     void OnEnable()
     {
@@ -52,11 +55,8 @@ public class MipmapProgram : MonoBehaviour
         slider.value = mipLevel.Value;
 
         // set text
-        title.text = "Mipmap Simulator";
-        description.text = 
-            "This is an example of a mipmap simulator, generated with compute shaders.\n\n" +
-            "You can change the mip level to see what happens to the texture.\n\n" + 
-            "This texture is a 1K texture, and is displayed using fullscreen blit.\n\n";
+        title.text = titleText.Value;
+        description.text = descriptionText.Value;
         
         // register events
         slider.RegisterCallback<ChangeEvent<int>>(evt =>

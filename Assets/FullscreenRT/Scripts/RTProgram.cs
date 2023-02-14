@@ -18,6 +18,9 @@ public class RTProgram : MonoBehaviour
     private DropdownField   dropdown;
     private List<string>    dropdownOptions = new List<string>{"Noise", "UV"};
     private Button          returnButton;
+    
+    [SerializeField] private SText titleText;
+    [SerializeField] private SText descriptionText;
 
     void OnEnable()
     {
@@ -52,14 +55,8 @@ public class RTProgram : MonoBehaviour
         dropdown.index = kernelID.Value;
 
         // set text
-        title.text = "Full Screen Render Textures";
-        description.text = 
-            "This scene was made to understand the blit process in URP.\n\n" +
-            "Full screen effects can be implemented by blitting from the camera color target " +
-            "to a temporary render texture,\n\nand blitting the temporary texture back to " + 
-            "the camera color target." + 
-            "\n\nThe first kernel generates basic uv coordinates and the second kernel generates " +
-            "a simple noise texture.\n\n";
+        title.text = titleText.Value;
+        description.text = descriptionText.Value;
         
         // register events
         dropdown.RegisterCallback<ChangeEvent<string>>(evt =>

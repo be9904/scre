@@ -708,14 +708,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blurFeature: {fileID: 4059126897340838834, guid: c85429ff95020fc46bb666f7c097de85,
     type: 2}
-  isEnabled:
-    isConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 2ef25d0416f781b44a8e1826cce80fef, type: 2}
   blurStrength:
     isConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: ff3f8dab0598676459ce3ce7bf249c9d, type: 2}
+  titleText:
+    isConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 2303a5e144373a54d85343811a09daee, type: 2}
+  descriptionText:
+    isConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 329ad2179f3de9946914c01436d65889, type: 2}
 --- !u!114 &1651619843
 MonoBehaviour:
   m_ObjectHideFlags: 0
