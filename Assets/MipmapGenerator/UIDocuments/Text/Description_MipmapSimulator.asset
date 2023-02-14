@@ -20,7 +20,7 @@ MonoBehaviour:
 
 
     This texture
-    is a 1K texture, and is displayed using fullscreen blit.
+    is a 1K POT(Power Of Two) texture, and is displayed using fullscreen blit.
 
 
 '
