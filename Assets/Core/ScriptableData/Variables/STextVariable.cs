@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scripted Variables/Text")]
+[CreateAssetMenu(menuName = "Scriptable Data/Variables/Text")]
 public class STextVariable : ScriptableObject
 {
     [TextArea(minLines: 7, maxLines: 15)]

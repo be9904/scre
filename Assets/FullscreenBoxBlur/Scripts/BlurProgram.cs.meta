@@ -3,7 +3,9 @@ guid: bfbeed14477637e498807d38633729cc
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - blurFeature: {fileID: 4059126897340838834, guid: c85429ff95020fc46bb666f7c097de85,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

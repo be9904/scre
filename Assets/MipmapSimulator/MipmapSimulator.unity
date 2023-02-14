@@ -293,6 +293,14 @@ MonoBehaviour:
     isConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 4ed4f04c2372f3245a842eb45e3b3b6b, type: 2}
+  images:
+  - Variable: {fileID: 11400000, guid: 8de67d9dc384d6845ba2925cf3140369, type: 2}
+  - Variable: {fileID: 11400000, guid: 7070734222ad9134bb2c88e4f50ffe6d, type: 2}
+  - Variable: {fileID: 11400000, guid: 5a8ff709628bb8e4a86a0ddb15e405f4, type: 2}
+  imageIndex:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: c45c6219f29bea74c97a4c10c3847364, type: 2}
   titleText:
     isConstant: 0
     ConstantValue: 

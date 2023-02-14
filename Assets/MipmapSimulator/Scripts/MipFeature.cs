@@ -7,9 +7,9 @@ public class MipSettings
 {
     public RenderPassEvent renderPassEvent;
     public ComputeShader computeShader;
-    public Texture2D image;
-    
+
     // runtime options
+    public STexture2D inputTexture;
     public SInt mipLevel;
 }
 
@@ -21,7 +21,7 @@ public class MipFeature : ScriptableRendererFeature
     /// <inheritdoc/>
     public override void Create()
     {
-        Shader.SetGlobalTexture("_MIP", passSettings.image);
+        Shader.SetGlobalTexture("_MIP", passSettings.inputTexture);
         
         mipPass = new MipPass(
             "Mipmap Render pass",

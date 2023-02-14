@@ -21,8 +21,7 @@ public class MipPass : ScriptableRenderPass
         this.profilerTag = profilerTag;
         computeShader = passSettings.computeShader;
         mipLevel = passSettings.mipLevel.Value;
-        Resolution = passSettings.image.width;
-
+        Resolution = passSettings.inputTexture.Variable.texture.width;
         outputRT = GenerateMipmap(mipLevel);
     }
 
@@ -64,8 +63,7 @@ public class MipPass : ScriptableRenderPass
         outputRT.Create();
         
         Texture2D readBuffer = (Texture2D)Shader.GetGlobalTexture("_MIP");
-        // readBuffer.wrapMode = TextureWrapMode.Clamp;
-        
+
         // don't allocate to write buffer yet
         RenderTexture writeBuffer = new RenderTexture(Resolution, Resolution, 24);
         Resolution = outputRT.width;

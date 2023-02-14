@@ -10,6 +10,7 @@
                         <ui:SliderInt picking-mode="Ignore" label="Mip Level" value="0" high-value="7" name="Miplevel" class="unity-slider-int" />
                     </ui:VisualElement>
                 </ui:VisualElement>
+                <ui:DropdownField label="Image" name="ImageOption" style="font-size: 18px; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); border-bottom-width: 3px; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px; -unity-font: none; color: rgb(255, 255, 255);" />
                 <ui:Button display-tooltip-when-elided="true" text="Reset" name="Reset" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: rgb(87, 87, 87);" />
             </ui:ScrollView>
         </ui:VisualElement>

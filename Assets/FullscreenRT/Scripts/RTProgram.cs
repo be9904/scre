@@ -9,6 +9,7 @@ public class RTProgram : MonoBehaviour
     [SerializeField] private FullScreenRTFeature RTFeature;
     
     // Renderer feature options to tweak at runtime
+    [Header("Render Feature Runtime Options")]
     [SerializeField] private SInt kernelID;
 
     // UI Elements
@@ -19,6 +20,7 @@ public class RTProgram : MonoBehaviour
     private List<string>    dropdownOptions = new List<string>{"Noise", "UV"};
     private Button          returnButton;
     
+    [Header("UI Text Fields")]
     [SerializeField] private SText titleText;
     [SerializeField] private SText descriptionText;
 

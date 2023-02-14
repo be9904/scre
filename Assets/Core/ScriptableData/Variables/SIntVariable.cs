@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scripted Variables/Int")]
+[CreateAssetMenu(menuName = "Scriptable Data/Variables/Int")]
 public class SIntVariable : ScriptableObject
 {
     public int Value;

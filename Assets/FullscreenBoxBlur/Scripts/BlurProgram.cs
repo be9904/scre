@@ -8,6 +8,7 @@ public class BlurProgram : MonoBehaviour
     [SerializeField] private FullScreenBlurFeature blurFeature;
     
     // Renderer feature options to tweak at runtime
+    [Header("Render Feature Runtime Options")]
     [SerializeField] private SInt blurStrength;
 
     // UI Elements
@@ -18,6 +19,7 @@ public class BlurProgram : MonoBehaviour
     private Button          resetButton;
     private Button          returnButton;
 
+    [Header("UI Text Fields")]
     [SerializeField] private SText titleText;
     [SerializeField] private SText descriptionText;
     
