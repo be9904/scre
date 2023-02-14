@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   passSettings:
-    renderPassEvent: 300
+    renderPassEvent: 500
     computeShader: {fileID: 7200000, guid: 43103ba046d3bef4ca3aef97524991a8, type: 3}
     image: {fileID: 2800000, guid: c9005e4d3c3c93b419b876723e101041, type: 3}
     mipLevel:
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   passSettings:
-    renderPassEvent: 300
+    renderPassEvent: 500
     computeShader: {fileID: 7200000, guid: ca8bca014a104fa4e908785601b354f4, type: 3}
     kernelID:
       isConstant: 0
