@@ -103,3 +103,7 @@ SliderInt.unity-slider-int:focus {
 TextField#unity-text-input {
     background-color: rgba(36, 36, 36, 0.7);
 }
+
+.unity-base-popup-field__text{
+    color: rgb(0,0,0);
+}
