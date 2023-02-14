@@ -25,7 +25,7 @@ public class RTProgram : MonoBehaviour
     void OnEnable()
     {
         // cache main camera
-        ProgramUtility.AlignView(Camera.main);
+        ProgramUtility.AdjustView(Camera.main);
         
         // set renderer feature active
         RTFeature.SetActive(true);

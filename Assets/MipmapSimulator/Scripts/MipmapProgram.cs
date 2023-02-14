@@ -26,7 +26,7 @@ public class MipmapProgram : MonoBehaviour
     void OnEnable()
     {
         // cache main camera
-        ProgramUtility.AlignView(Camera.main);
+        ProgramUtility.AdjustView(Camera.main);
         
         // set renderer feature active
         mipFeature.SetActive(true);

@@ -1,10 +1,7 @@
 // Each #kernel tells which function to compile; you can have many kernels
 #pragma kernel MipmapKernel
 
-// Create a RenderTexture with enableRandomWrite flag and set it
-// with cs.SetTexture
 Texture2D _ReadBuffer;
-SamplerState sampler_ReadBuffer;
 RWTexture2D<float4> Result;
 float Resolution;
 
@@ -12,20 +9,17 @@ float Resolution;
 void MipmapKernel (uint3 id : SV_DispatchThreadID)
 {
     int2 intUV = id.xy << 1;
-    float2 tc = intUV / Resolution;
-    float tcf = 0.5f;
-
     float4 color = float4(0, 0, 0, 0);
+
     for(int k = 0 ; k < 4 ; k++)
     {
         const int2 offset = int2(k>>1, k&1);
-        // Need to use SampleLevel() in compute shader to sample texture. Same with vertex shaders.
-        const float4 t = _ReadBuffer.SampleLevel(sampler_ReadBuffer, tc + (tcf+offset) / Resolution, 0);
-        if(t.a > 0) color += float4(t.rgb, 1.0);
+        const float4 t = _ReadBuffer[intUV + offset];
+        color += float4(t.rgb, 1.0);
     }
 
-    if(color.a > 0) color /= color.a;
+    color /= 4;
 
     Result[id.xy] = color;
-    // Result[id.xy] = float4(tc, 0, 1);
+    // Result[id.xy] = float4(0, intUV.y / Resolution, 0, 1);
 }

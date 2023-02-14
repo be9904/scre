@@ -2,7 +2,7 @@ using UnityEngine;
 
 public static class ProgramUtility
 {
-    public static void AlignView(Camera mainCam)
+    public static void AdjustView(Camera mainCam)
     {
         // calculate aspect ratio
         float aspectRatio = (float)Screen.width / Screen.height;
@@ -33,9 +33,11 @@ public static class ProgramUtility
         mainCam.pixelRect = new Rect(pos.x, pos.y, scale.x, scale.y);
     }
     
+    #region RTtoTex2D
     public static Texture2D RTtoTex2D(RenderTexture rt)
     {
         Texture2D outputTex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, true);
+        outputTex.wrapMode = TextureWrapMode.Clamp;
         
         RenderTexture.active = rt;
         outputTex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
@@ -43,4 +45,16 @@ public static class ProgramUtility
         
         return outputTex;
     }
+    public static Texture2D RTtoTex2D(RenderTexture rt, TextureWrapMode wrapMode)
+    {
+        Texture2D outputTex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, true);
+        outputTex.wrapMode = wrapMode;
+        
+        RenderTexture.active = rt;
+        outputTex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+        outputTex.Apply();
+        
+        return outputTex;
+    }
+    #endregion
 }

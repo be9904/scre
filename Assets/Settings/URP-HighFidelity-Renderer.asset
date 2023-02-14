@@ -16,7 +16,7 @@ MonoBehaviour:
   passSettings:
     renderPassEvent: 500
     computeShader: {fileID: 7200000, guid: 43103ba046d3bef4ca3aef97524991a8, type: 3}
-    image: {fileID: 2800000, guid: c9005e4d3c3c93b419b876723e101041, type: 3}
+    image: {fileID: 2800000, guid: 96a2193bf2c762e40b5cad0d4a235b1a, type: 3}
     mipLevel:
       isConstant: 0
       ConstantValue: 0

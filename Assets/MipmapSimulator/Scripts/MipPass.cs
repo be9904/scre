@@ -46,7 +46,7 @@ public class MipPass : ScriptableRenderPass
         }
         else // mipmap
         {
-            cmd.Blit(ProgramUtility.RTtoTex2D(outputRT), cameraColorTargetIdent);
+            cmd.Blit(ProgramUtility.RTtoTex2D(outputRT, TextureWrapMode.Clamp), cameraColorTargetIdent);
         }
         
         context.ExecuteCommandBuffer(cmd);
@@ -64,6 +64,7 @@ public class MipPass : ScriptableRenderPass
         outputRT.Create();
         
         Texture2D readBuffer = (Texture2D)Shader.GetGlobalTexture("_MIP");
+        // readBuffer.wrapMode = TextureWrapMode.Clamp;
         
         // don't allocate to write buffer yet
         RenderTexture writeBuffer = new RenderTexture(Resolution, Resolution, 24);
