@@ -1,3 +1,5 @@
+// script from @pbhogan https://gist.github.com/pbhogan/2094a033c094ddd1b0b8f37a5dffd005
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -16,12 +18,10 @@ public class AspectRatioPanel : VisualElement
 		readonly UxmlIntAttributeDescription balanceX = new() { name = "balance-x", defaultValue = 50, restriction = new UxmlValueBounds { min = "0", max = "100" } };
 		readonly UxmlIntAttributeDescription balanceY = new() { name = "balance-y", defaultValue = 50, restriction = new UxmlValueBounds { min = "0", max = "100" } };
 
-
 		public override IEnumerable<UxmlChildElementDescription> uxmlChildElementsDescription
 		{
 			get { yield break; }
 		}
-
 
 		public override void Init( VisualElement visualElement, IUxmlAttributes attributes, CreationContext creationContext )
 		{
@@ -38,12 +38,10 @@ public class AspectRatioPanel : VisualElement
 		}
 	}
 
-
 	public int AspectRatioX { get; private set; } = 16;
 	public int AspectRatioY { get; private set; } = 9;
 	public int BalanceX { get; private set; } = 50;
 	public int BalanceY { get; private set; } = 50;
-
 
 	public AspectRatioPanel()
 	{
@@ -55,19 +53,16 @@ public class AspectRatioPanel : VisualElement
 		RegisterCallback<AttachToPanelEvent>( OnAttachToPanelEvent );
 	}
 
-
 	void OnAttachToPanelEvent( AttachToPanelEvent e )
 	{
 		parent?.RegisterCallback<GeometryChangedEvent>( OnGeometryChangedEvent );
 		FitToParent();
 	}
 
-
 	void OnGeometryChangedEvent( GeometryChangedEvent e )
 	{
 		FitToParent();
 	}
-
 
 	void FitToParent()
 	{
