@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Core/Program/Loading/RadialProgress.uss?fileID=7433441132597879392&amp;guid=5ad678f26585fba4d91b98bc0c41bece&amp;type=3#RadialProgress" />
+    <ui:VisualElement name="background" style="background-image: none; background-color: rgb(192, 192, 192); min-height: 100%;">
+        <ui:VisualElement name="radial-texture" style="height: 100%;">
+            <AspectRatioPanel aspect-ratio-x="1" aspect-ratio-y="1" style="background-image: url(&apos;project://database/Assets/Core/Program/Loading/particles-single.png?fileID=2800000&amp;guid=0a002f33cd650fb4e9e29e6731aa6ed9&amp;type=3#particles-single&apos;);" />
+            <ui:VisualElement name="RadialProgressExample" style="height: 100%; justify-content: center;">
+                <Style src="project://database/Assets/Core/Program/Loading/RadialProgress.uss?fileID=7433441132597879392&amp;guid=5ad678f26585fba4d91b98bc0c41bece&amp;type=3#RadialProgress" />
+                <ui:VisualElement style="align-items: center;">
+                    <RadialProgress progress="87.1" style="width: 120px; height: 120px;" />
+                </ui:VisualElement>
+                <ui:Label text="Graphics" display-tooltip-when-elided="true" style="font-size: 120px; color: rgb(0, 0, 0); -unity-font: url(&apos;project://database/Assets/Fonts/FutuMd.ttf?fileID=12800000&amp;guid=08530c7bc68f592498c86a3594cdf1df&amp;type=3#FutuMd&apos;); -unity-text-align: middle-center; -unity-font-style: bold; height: 15%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

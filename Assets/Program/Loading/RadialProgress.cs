@@ -61,7 +61,7 @@ public class RadialProgress : VisualElement
             // Whenever the progress property changes, MarkDirtyRepaint() is named. This causes a call to the
             // generateVisualContents callback.
             m_Progress = value;
-            m_Label.text = Mathf.Clamp(Mathf.Round(value), 0, 100) + "%";
+            // m_Label.text = Mathf.Clamp(Mathf.Round(value), 0, 100) + "%";
             MarkDirtyRepaint();
         }
     }
@@ -70,9 +70,9 @@ public class RadialProgress : VisualElement
     public RadialProgress()
     {
         // Create a Label, add a USS class name, and add it to this visual tree.
-        m_Label = new Label();
-        m_Label.AddToClassList(ussLabelClassName);
-        Add(m_Label);
+        // m_Label = new Label();
+        // m_Label.AddToClassList(ussLabelClassName);
+        // Add(m_Label);
 
         // Create meshes for the track and the progress.
         m_ProgressMesh = new EllipseMesh(k_NumSteps);

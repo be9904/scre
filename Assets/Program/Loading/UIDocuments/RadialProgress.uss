@@ -18,3 +18,7 @@
     -unity-text-align: middle-left;
     color: var(--percentage-color);
 }
+
+#radial-texture {
+    
+}
