@@ -282,10 +282,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 777074873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccfd8dff369869547804806e933dbb83, type: 3}
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellularAutomata: {fileID: 0}
-  previousTexture: {fileID: 0}
-  Result: {fileID: 0}
-  PreviousResult: {fileID: 0}
+  m_PanelSettings: {fileID: 11400000, guid: 507dd7e2796a7f84590c8cab204d9ccf, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: 5305ceb3856c1c54fbf9dffb2d1c0004,
+    type: 3}
+  m_SortingOrder: 0
