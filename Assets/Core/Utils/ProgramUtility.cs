@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public static class ProgramUtility
 {
@@ -31,6 +32,16 @@ public static class ProgramUtility
 
         // update maincam pixel rect
         mainCam.pixelRect = new Rect(pos.x, pos.y, scale.x, scale.y);
+    }
+
+    public static void FitVisualElementToHeight(UIDocument doc, string compName)
+    {
+        VisualElement root = doc.GetComponent<UIDocument>()?.rootVisualElement;
+        
+        if (root == null) return;
+
+        VisualElement ve = root.Q<VisualElement>(compName);
+        
     }
     
     #region RTtoTex2D
