@@ -41,6 +41,21 @@ public static class ProgramUtility
         mainCam.pixelRect = new Rect(pos.x, pos.y, scale.x, scale.y);
     }
 
+    public static Vector4 GetScreenBounds(Camera mainCam)
+    {
+        // (x min, x max, y min, y max)
+        Vector4 bounds = new Vector4();
+
+        Rect mainCamRect = mainCam.rect;
+
+        bounds.x = Screen.width * mainCamRect.x;
+        bounds.y = bounds.x + Screen.width * mainCamRect.width;
+        bounds.z = Screen.height * mainCamRect.y;
+        bounds.w = bounds.z + Screen.height * mainCamRect.height;
+
+        return bounds;
+    }
+
     public static void FitVisualElementToHeight(UIDocument doc, string compName)
     {
         VisualElement root = doc.GetComponent<UIDocument>()?.rootVisualElement;
