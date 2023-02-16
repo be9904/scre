@@ -8,13 +8,13 @@
     border-right-color: rgb(94, 94, 94);
     border-top-color: rgb(94, 94, 94);
     border-bottom-color: rgb(94, 94, 94);
+    border-bottom-width: 3px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
     padding-left: 8px;
     padding-right: 8px;
     padding-top: 8px;
     padding-bottom: 8px;
-    border-bottom-width: 3px;
-    font-size: 18px;
-    color: rgb(255, 255, 255);
 }
 
 .unity-slider {
@@ -52,10 +52,6 @@
     color: rgb(255, 255, 255);
 }
 
-Toggle.unity-toggle:hover {
-    color: rgb(166, 166, 166);
-}
-
 Slider.unity-slider:hover {
     color: rgb(166, 166, 166);
 }
@@ -74,8 +70,12 @@ Button.unity-button:hover {
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    cursor: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-6090568113533005507&guid=ff8bcaaa9d21b194ca4ef76263ce4f67&type=3#check');
-    background-image: none;
+}
+
+#unity-checkmark:checked {
+    background-image: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=7433338533053954386&guid=ff8bcaaa9d21b194ca4ef76263ce4f67&type=3#check@2x');
+    background-color: rgb(0, 0, 0);
+    -unity-background-image-tint-color: rgba(255, 255, 255, 255);
 }
 
 .unity-slider-int {
@@ -102,8 +102,4 @@ SliderInt.unity-slider-int:focus {
 
 TextField#unity-text-input {
     background-color: rgba(36, 36, 36, 0.7);
-}
-
-.unity-base-popup-field__text{
-    color: rgb(0,0,0);
 }
