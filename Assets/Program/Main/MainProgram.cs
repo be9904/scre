@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(UIDocument))]
 public class MainProgram : MonoBehaviour
@@ -10,6 +11,8 @@ public class MainProgram : MonoBehaviour
     [SerializeField] private FullScreenBlurFeature blurFeature;
     [SerializeField] private GlitchFeature glitchFeature;
     [SerializeField] private SInt mainBlurStrength;
+    
+    
     
     // UI Elements
     private UIDocument mainUI;

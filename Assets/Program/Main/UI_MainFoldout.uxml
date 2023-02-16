@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Program/Main/USS_Main.uss?fileID=7433441132597879392&amp;guid=fa3b40a1f46f4bf41866a2eb737ddd8e&amp;type=3#USS_Main" />
-    <ui:Foldout text="Foldout" style="color: rgb(0, 0, 0); font-size: 50%; -unity-font: url(&apos;project://database/Assets/Fonts/FutuHv.ttf?fileID=12800000&amp;guid=7a28b3a2e27c1cd4daaf23e83b485b39&amp;type=3#FutuHv&apos;); -unity-font-style: bold; -unity-text-align: middle-left;">
+    <ui:Foldout text="Foldout" style="color: rgb(0, 0, 0); font-size: 50%; -unity-font: url(&apos;project://database/Assets/Fonts/FutuHv.ttf?fileID=12800000&amp;guid=7a28b3a2e27c1cd4daaf23e83b485b39&amp;type=3#FutuHv&apos;); -unity-font-style: bold; -unity-text-align: middle-left; margin-bottom: 0.5%;">
         <ui:VisualElement name="scene" style="flex-direction: row; justify-content: space-between; align-items: center; padding-left: 5px; padding-right: 5px; padding-top: 5px; padding-bottom: 5px; margin-left: 1%;">
             <ui:Label text="Label" display-tooltip-when-elided="true" />
             <ui:Button display-tooltip-when-elided="true" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=ff8bcaaa9d21b194ca4ef76263ce4f67&amp;type=3#arrow-right@2x&apos;); background-color: rgba(88, 88, 88, 0); padding-left: 15px; padding-right: 15px;" />

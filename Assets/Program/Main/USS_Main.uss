@@ -15,7 +15,7 @@
     -unity-font: url('project://database/Assets/Fonts/FutuHv.ttf?fileID=12800000&guid=7a28b3a2e27c1cd4daaf23e83b485b39&type=3#FutuHv');
     font-size: 24px;
     padding-right: 7.5%;
-    padding-left: 7.5%;
+    padding-left: 2.5%;
 }
 
 .description-field-body {
@@ -26,8 +26,8 @@
     -unity-font-style: bold;
 }
 
-.unity-button{
-    border-color: rgb(0,0,0);
+.unity-button {
+    border-color: rgb(0, 0, 0);
     border-radius: 30;
     border-width: 4px;
     height: 60%;
