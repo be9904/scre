@@ -49,7 +49,10 @@ public class SmoothLoading : MonoBehaviour
 
         // load next scene when target time is reached
         if (currentProgress > loadTime + loadDelay)
+        {
             loadOperation.allowSceneActivation = true;
+            loadingUI.enabled = false;
+        }
         
         // update current progress
         currentProgress += Time.deltaTime;

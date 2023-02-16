@@ -74,7 +74,7 @@ public class BlurProgram : MonoBehaviour
             blurFeature.SetActive(false);
             
             Debug.Log("Go to main menu");
-            // return to list
+            ProgramUtility.ReturnToMain();
         });
     }
 
