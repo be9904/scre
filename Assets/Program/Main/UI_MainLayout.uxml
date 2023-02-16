@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Program/Main/USS_Main.uss?fileID=7433441132597879392&amp;guid=fa3b40a1f46f4bf41866a2eb737ddd8e&amp;type=3#USS_Main" />
+    <ui:VisualElement style="height: 75%; align-items: flex-start; flex-direction: row;">
+        <ui:VisualElement name="glitch-background" class="corner-background" />
+        <ui:ListView focusable="true" style="height: 100%; width: 25%;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="description-field" class="description-field" />
+</ui:UXML>
