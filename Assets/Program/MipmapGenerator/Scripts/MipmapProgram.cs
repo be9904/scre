@@ -41,6 +41,7 @@ public class MipmapProgram : MonoBehaviour
         
         // initial run to match image index
         mipFeature.passSettings.inputTexture = images[imageIndex];
+        mipFeature.Create();
     }
     
     private void OnDisable()

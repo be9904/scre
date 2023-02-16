@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Template name="UI_MainDocument" src="project://database/Assets/UI/Documents/UI_MainDocument.uxml?fileID=9197481963319205126&amp;guid=2048b03143a7d1d4d93d5cc011a81b7d&amp;type=3#UI_MainDocument" />
+    <ui:Instance template="UI_MainDocument" name="UI_MainDocument" style="width: 100%; height: 100%;" />
+</ui:UXML>
