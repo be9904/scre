@@ -11,8 +11,13 @@ public class MainProgram : MonoBehaviour
     [SerializeField] private GlitchFeature glitchFeature;
     [SerializeField] private SInt mainBlurStrength;
     
+    // UI Elements
     private UIDocument mainUI;
-    private VisualElement glitchBackground;
+    private Label about;
+    private Label members;
+
+    [SerializeField] private SText mainAbout;
+    [SerializeField] private SText mainMembers;
     
     void OnEnable()
     {
@@ -20,8 +25,7 @@ public class MainProgram : MonoBehaviour
         glitchFeature.SetActive(true);
         blurFeature.passSettings.blurStrength = mainBlurStrength;
         
-        mainUI = GetComponent<UIDocument>();
-        glitchBackground = mainUI.rootVisualElement.Q<VisualElement>("glitch-background");
+        BindUIElements();
     }
 
     private void OnDisable()
@@ -30,9 +34,13 @@ public class MainProgram : MonoBehaviour
         glitchFeature.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    void BindUIElements()
     {
-        
+        mainUI = GetComponent<UIDocument>();
+        about = mainUI.rootVisualElement.Q<Label>("about-field");
+        members = mainUI.rootVisualElement.Q<Label>("members-field");
+
+        about.text = mainAbout.Value;
+        members.text = mainMembers.Value;
     }
 }

@@ -275,6 +275,14 @@ MonoBehaviour:
     isConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 522194bbc4398df45b67019e93bef2a5, type: 2}
+  mainAbout:
+    isConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 02578f6ff7854dd41b46ae66cd278458, type: 2}
+  mainMembers:
+    isConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: eaf24de2518a3384589a412e4466050a, type: 2}
 --- !u!1 &418166971
 GameObject:
   m_ObjectHideFlags: 0
