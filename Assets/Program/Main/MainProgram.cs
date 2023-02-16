@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
@@ -20,14 +21,17 @@ public class MainProgram : MonoBehaviour
     private List<Button> textures;
     private List<Button> srp;
 
+
     [SerializeField] private SText mainAbout;
     [SerializeField] private SText mainMembers;
+    public List<Button> buttons;
     
     void OnEnable()
     {
         blurFeature.SetActive(true);
         glitchFeature.SetActive(true);
         blurFeature.passSettings.blurStrength = mainBlurStrength;
+        blurFeature.Create();
         
         BindUIElements();
     }
@@ -41,38 +45,21 @@ public class MainProgram : MonoBehaviour
     void BindUIElements()
     {
         mainUI = GetComponent<UIDocument>();
-        about = mainUI.rootVisualElement.Q<Label>("about-field");
-        members = mainUI.rootVisualElement.Q<Label>("members-field");
-        
-        // mainUI.rootVisualElement.Q<Button>("shaders-01-button").RegisterCallback<ClickEvent>(evt =>
-        // {
-        //     SmoothLoading.SetNextSceneIndex(2);
-        // });
-        // mainUI.rootVisualElement.Q<Button>("shaders-02-button").RegisterCallback<ClickEvent>(evt =>
-        // {
-        //     SmoothLoading.SetNextSceneIndex(3);
-        // });
-        // mainUI.rootVisualElement.Q<Button>("shaders-03-button").RegisterCallback<ClickEvent>(evt =>
-        // {
-        //     SmoothLoading.SetNextSceneIndex(4);
-        //     
-        // });
-        
-        mainUI.rootVisualElement.Q<Button>("textures-01-button").RegisterCallback<ClickEvent>(evt =>
-        {  
-            SmoothLoading.SetNextSceneIndex(2);
-            SceneManager.LoadScene(1);
-        });
-        mainUI.rootVisualElement.Q<Button>("textures-02-button").RegisterCallback<ClickEvent>(evt =>
-        {  
-            SmoothLoading.SetNextSceneIndex(3);
-            SceneManager.LoadScene(1);
-        });
-        mainUI.rootVisualElement.Q<Button>("srp-01-button").RegisterCallback<ClickEvent>(evt =>
-        {  
-            SmoothLoading.SetNextSceneIndex(4);
-            SceneManager.LoadScene(1);
-        });
+        var root = mainUI.rootVisualElement;
+        about = root.Q<Label>("about-field");
+        members = root.Q<Label>("members-field");
+
+        buttons = root.Query<Button>().Where(elem => elem.tooltip == "scene").ToList();
+
+        for (int i = 0; i < buttons.Count ; i ++)
+        {
+            int sceneIndex = i + 2;
+            buttons[i].RegisterCallback<ClickEvent>(evt => 
+            {
+                SmoothLoading.SetNextSceneIndex(sceneIndex);
+                SceneManager.LoadScene(1);
+            });
+        }
 
         about.text = mainAbout.Value;
         members.text = mainMembers.Value;
