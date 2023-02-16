@@ -74,8 +74,7 @@ public class RTProgram : MonoBehaviour
         {
             RTFeature.SetActive(false);
             
-            Debug.Log("Go to main menu");
-            // return to list
+            ProgramUtility.ReturnToMain();
         });
     }
 }

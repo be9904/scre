@@ -22,6 +22,25 @@ MonoBehaviour:
       isConstant: 0
       ConstantValue: 0
       Variable: {fileID: 11400000, guid: 4ed4f04c2372f3245a842eb45e3b3b6b, type: 2}
+--- !u!114 &-3315143538539145202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472f1510ef5d39d4daa941ec05aac041, type: 3}
+  m_Name: Kino Glitch
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  passSettings:
+    scanLineJitter: 0.4
+    verticalJump: 0
+    horizontalShake: 0.01
+    colorDrift: 0.2
+    shader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,7 +60,8 @@ MonoBehaviour:
   - {fileID: 4059126897340838834}
   - {fileID: 1447307670743079556}
   - {fileID: -7608628823269515896}
-  m_RendererFeatureMap: b2f33b2e68ea543884da568ba8de151488dd38c165b86896
+  - {fileID: -3315143538539145202}
+  m_RendererFeatureMap: b2f33b2e68ea543884da568ba8de151488dd38c165b868960e58f11d843efed1
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -113,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152cb38777d68d3428c1d9f896cefcab, type: 3}
   m_Name: FullScreenBlurFeature
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   passSettings:
     renderPassEvent: 500
     blitShader: {fileID: 4800000, guid: f3c2627b7d897144392cd9ffdcb3db97, type: 3}

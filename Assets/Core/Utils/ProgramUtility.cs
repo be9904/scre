@@ -1,8 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public static class ProgramUtility
 {
+    public static void ReturnToMain()
+    {
+        SmoothLoading.SetNextSceneIndex(0);
+        SceneManager.LoadScene(1);
+    }
+    
     public static void AdjustView(Camera mainCam)
     {
         // calculate aspect ratio

@@ -108,8 +108,7 @@ public class MipmapProgram : MonoBehaviour
         {
             mipFeature.SetActive(false);
             
-            Debug.Log("Go to main menu");
-            // return to list
+            ProgramUtility.ReturnToMain();
         });
     }
     

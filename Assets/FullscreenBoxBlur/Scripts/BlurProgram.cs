@@ -27,6 +27,8 @@ public class BlurProgram : MonoBehaviour
     {
         // set renderer feature active
         blurFeature.SetActive(true);
+        blurFeature.passSettings.blurStrength = blurStrength;
+        blurFeature.Create();
         
         // bind UI elements
         BindUIElements();
@@ -72,8 +74,7 @@ public class BlurProgram : MonoBehaviour
             // disable renderer feature
             blurFeature.SetActive(false);
             
-            Debug.Log("Go to main menu");
-            // return to list
+            ProgramUtility.ReturnToMain();
         });
     }
 
