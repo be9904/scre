@@ -36,10 +36,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   passSettings:
-    scanLineJitter: 0.3
-    verticalJump: 0.1
-    horizontalShake: 0
-    colorDrift: 0.15
+    scanLineJitter: 0.4
+    verticalJump: 0
+    horizontalShake: 0.01
+    colorDrift: 0.2
     shader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152cb38777d68d3428c1d9f896cefcab, type: 3}
   m_Name: FullScreenBlurFeature
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   passSettings:
     renderPassEvent: 500
     blitShader: {fileID: 4800000, guid: f3c2627b7d897144392cd9ffdcb3db97, type: 3}

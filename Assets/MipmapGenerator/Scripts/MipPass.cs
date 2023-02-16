@@ -11,7 +11,6 @@ public class MipPass : ScriptableRenderPass
     private ComputeShader computeShader;
     private int mipLevel;
     private int Resolution;
-    private Texture2D inputImage;
     private RenderTexture outputRT;
 
     public MipPass(string profilerTag, MipSettings passSettings)

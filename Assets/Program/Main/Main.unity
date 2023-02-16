@@ -214,8 +214,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 411423830}
-  - component: {fileID: 411423829}
   - component: {fileID: 411423828}
+  - component: {fileID: 411423831}
   m_Layer: 0
   m_Name: Program
   m_TagString: Untagged
@@ -237,35 +237,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 507dd7e2796a7f84590c8cab204d9ccf, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: bf87dd551fc644b47b40e6661b96bbcc,
+  sourceAsset: {fileID: 9197481963319205126, guid: 589d862b03a1f25478bb80253bdf084d,
     type: 3}
   m_SortingOrder: 0
---- !u!114 &411423829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411423827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfbeed14477637e498807d38633729cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blurFeature: {fileID: 4059126897340838834, guid: c85429ff95020fc46bb666f7c097de85,
-    type: 2}
-  blurStrength:
-    isConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: ff3f8dab0598676459ce3ce7bf249c9d, type: 2}
-  titleText:
-    isConstant: 0
-    ConstantValue: 
-    Variable: {fileID: 11400000, guid: 2303a5e144373a54d85343811a09daee, type: 2}
-  descriptionText:
-    isConstant: 0
-    ConstantValue: 
-    Variable: {fileID: 11400000, guid: 329ad2179f3de9946914c01436d65889, type: 2}
 --- !u!4 &411423830
 Transform:
   m_ObjectHideFlags: 0
@@ -281,6 +255,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &411423831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411423827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471ad8f712163c940ac2a3b0c1e91980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blurFeature: {fileID: 4059126897340838834, guid: c85429ff95020fc46bb666f7c097de85,
+    type: 2}
+  glitchFeature: {fileID: -3315143538539145202, guid: c85429ff95020fc46bb666f7c097de85,
+    type: 2}
+  mainBlurStrength:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 522194bbc4398df45b67019e93bef2a5, type: 2}
 --- !u!1 &418166971
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +653,6 @@ GameObject:
   - component: {fileID: 1249786920}
   - component: {fileID: 1249786919}
   - component: {fileID: 1249786918}
-  - component: {fileID: 1249786922}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -718,7 +711,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -727,7 +720,7 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.0025
+    x: 0
     y: 0.25
     width: 0.75
     height: 0.75
@@ -766,23 +759,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 20.146, y: 195.09, z: 0.001}
---- !u!114 &1249786922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249786917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870b9a8f0f82f4f56800cc427bcd1025, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scanLineJitter: 0
-  _verticalJump: 0
-  _horizontalShake: 0
-  _colorDrift: 0
-  _shader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
 --- !u!1001 &1451082424
 PrefabInstance:
   m_ObjectHideFlags: 0

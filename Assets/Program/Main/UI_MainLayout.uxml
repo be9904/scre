@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <Style src="project://database/Assets/Program/Main/USS_Main.uss?fileID=7433441132597879392&amp;guid=fa3b40a1f46f4bf41866a2eb737ddd8e&amp;type=3#USS_Main" />
     <ui:VisualElement style="height: 75%; align-items: flex-start; flex-direction: row;">
-        <ui:VisualElement name="glitch-background" class="corner-background" />
-        <ui:ListView focusable="true" style="height: 100%; width: 25%;" />
+        <ui:VisualElement name="glitch-background" class="corner-background" style="background-color: rgba(0, 0, 0, 0.87); border-top-left-radius: 0; border-bottom-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-left-width: 15px; border-right-width: 0; border-top-width: 15px; border-bottom-width: 15px; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94);" />
+        <ui:ScrollView style="width: 25%; height: 100%; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); border-left-width: 15px; border-right-width: 15px; border-top-width: 15px; border-bottom-width: 15px;" />
     </ui:VisualElement>
     <ui:VisualElement name="description-field" class="description-field" />
 </ui:UXML>

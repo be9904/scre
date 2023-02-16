@@ -27,6 +27,7 @@ public class BlurProgram : MonoBehaviour
     {
         // set renderer feature active
         blurFeature.SetActive(true);
+        blurFeature.passSettings.blurStrength = blurStrength;
         
         // bind UI elements
         BindUIElements();

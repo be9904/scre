@@ -19,7 +19,7 @@ public class GlitchPass : ScriptableRenderPass
     private float colorDrift;
 
     private Material blitMaterial;
-    
+
     // shader properties
     private static readonly int scanLineJitterID = Shader.PropertyToID("_ScanLineJitter");
     private static readonly int verticalJumpID = Shader.PropertyToID("_VerticalJump");
@@ -35,7 +35,7 @@ public class GlitchPass : ScriptableRenderPass
         verticalJump = passSettings.verticalJump;
         horizontalShake = passSettings.horizontalShake;
         colorDrift = passSettings.colorDrift;
-
+        
         blitMaterial = new Material(passSettings.shader);
         blitMaterial.hideFlags = HideFlags.DontSave;
     }
@@ -62,10 +62,10 @@ public class GlitchPass : ScriptableRenderPass
         cmd.Clear();
         
         UpdateMaterialProperties();
-
+        
         cmd.Blit(cameraColorTargetIdent, tempTexture.Identifier());
         cmd.Blit(tempTexture.Identifier(), cameraColorTargetIdent, blitMaterial, 0);
-        
+
         context.ExecuteCommandBuffer(cmd);
         
         cmd.Clear();
