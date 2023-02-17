@@ -6,7 +6,7 @@
         </ui:VisualElement>
         <ui:ScrollView name="scene-list" style="width: 25%; height: 100%; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); border-left-width: 15px; border-right-width: 15px; border-top-width: 15px; border-bottom-width: 15px; background-color: rgb(166, 166, 166);">
             <ui:VisualElement name="UI_MainFoldout">
-                <ui:Foldout text="Shaders" name="Shaders" style="color: rgb(0, 0, 0); font-size: 50%; -unity-font: url(&apos;project://database/Assets/Fonts/FutuBd.ttf?fileID=12800000&amp;guid=67857f6e88f2c164f99347fd275e58ea&amp;type=3#FutuBd&apos;); -unity-font-style: bold; -unity-text-align: middle-left; margin-bottom: 1%;">
+                <ui:Foldout text="Shaders" name="Shaders" style="color: rgb(0, 0, 0); font-size: 50%; -unity-font: url(&apos;project://database/Assets/Fonts/FutuBd.ttf?fileID=12800000&amp;guid=67857f6e88f2c164f99347fd275e58ea&amp;type=3#FutuBd&apos;); -unity-font-style: bold; -unity-text-align: middle-left; margin-bottom: 1%; margin-top: 1%;">
                     <ui:VisualElement name="shaders-01" style="flex-direction: row; justify-content: space-between; align-items: center; margin-left: 2%;">
                         <ui:Label text="Starry Night" display-tooltip-when-elided="true" name="shaders-01-label" style="-unity-font-style: normal;" />
                         <ui:Button display-tooltip-when-elided="true" name="shaders-01-button" tooltip="scene" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=ff8bcaaa9d21b194ca4ef76263ce4f67&amp;type=3#arrow-right@2x&apos;); padding-left: 15px; padding-right: 15px; -unity-background-image-tint-color: rgb(0, 0, 0); background-color: rgba(88, 88, 88, 0);" />
@@ -22,7 +22,7 @@
                 </ui:Foldout>
             </ui:VisualElement>
             <ui:VisualElement name="UI_MainFoldout">
-                <ui:Foldout text="Textures" name="Textures" style="color: rgb(0, 0, 0); font-size: 50%; -unity-font: url(&apos;project://database/Assets/Fonts/FutuHv.ttf?fileID=12800000&amp;guid=7a28b3a2e27c1cd4daaf23e83b485b39&amp;type=3#FutuHv&apos;); -unity-font-style: bold; -unity-text-align: middle-left; margin-bottom: 1%;">
+                <ui:Foldout text="Textures" name="Textures" style="color: rgb(0, 0, 0); font-size: 50%; -unity-font: url(&apos;project://database/Assets/Fonts/FutuHv.ttf?fileID=12800000&amp;guid=7a28b3a2e27c1cd4daaf23e83b485b39&amp;type=3#FutuHv&apos;); -unity-font-style: bold; -unity-text-align: middle-left; margin-bottom: 1%; margin-top: 1%;">
                     <ui:VisualElement name="textures-01" style="flex-direction: row; justify-content: space-between; align-items: center; margin-left: 2%;">
                         <ui:Label text="Procedural Textures" display-tooltip-when-elided="true" name="textures-01-label" style="-unity-font-style: normal;" />
                         <ui:Button display-tooltip-when-elided="true" name="textures-01-button" tooltip="scene" class="unity-button" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=ff8bcaaa9d21b194ca4ef76263ce4f67&amp;type=3#arrow-right@2x&apos;); padding-left: 15px; padding-right: 15px; background-color: rgba(88, 88, 88, 0); -unity-background-image-tint-color: rgb(0, 0, 0);" />
@@ -34,7 +34,7 @@
                 </ui:Foldout>
             </ui:VisualElement>
             <ui:VisualElement name="UI_MainFoldout">
-                <ui:Foldout text="SRP Custom Render Pass" name="SRP" style="color: rgb(0, 0, 0); font-size: 50%; -unity-font: url(&apos;project://database/Assets/Fonts/FutuHv.ttf?fileID=12800000&amp;guid=7a28b3a2e27c1cd4daaf23e83b485b39&amp;type=3#FutuHv&apos;); -unity-font-style: bold; -unity-text-align: middle-left; margin-bottom: 1%;">
+                <ui:Foldout text="SRP Custom Render Pass" name="SRP" style="color: rgb(0, 0, 0); font-size: 50%; -unity-font: url(&apos;project://database/Assets/Fonts/FutuHv.ttf?fileID=12800000&amp;guid=7a28b3a2e27c1cd4daaf23e83b485b39&amp;type=3#FutuHv&apos;); -unity-font-style: bold; -unity-text-align: middle-left; margin-bottom: 1%; margin-top: 1%;">
                     <ui:VisualElement name="srp-01" style="flex-direction: row; justify-content: space-between; align-items: center; margin-left: 2%;">
                         <ui:Label text="Box Blur" display-tooltip-when-elided="true" name="srp-01-label" style="-unity-font-style: normal;" />
                         <ui:Button display-tooltip-when-elided="true" name="srp-01-button" tooltip="scene" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=ff8bcaaa9d21b194ca4ef76263ce4f67&amp;type=3#arrow-right@2x&apos;); padding-left: 15px; padding-right: 15px; background-color: rgba(88, 88, 88, 0); -unity-background-image-tint-color: rgb(0, 0, 0);" />
