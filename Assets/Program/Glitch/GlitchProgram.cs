@@ -8,7 +8,9 @@ using UnityEngine.UIElements;
 public class GlitchProgram : MonoBehaviour
 {
     // Reference renderer feature asset
-    [SerializeField] private FullScreenRTFeature RTFeature;
+    [SerializeField] private GlitchFeature glitchFeature;
+    [SerializeField] private Shader glitchShader;
+    [SerializeField] private STexture2D inputTexture;
     
     // pass params
     private float verticalJumpTime;
@@ -43,14 +45,20 @@ public class GlitchProgram : MonoBehaviour
     {
         ProgramUtility.AdjustView(Camera.main);
         
-        RTFeature.SetActive(true);
+        glitchFeature.SetActive(true);
+        glitchFeature.passSettings.useTexture = true;
+        glitchFeature.passSettings.inputTexture = inputTexture;
+        glitchFeature.passSettings.shader = glitchShader;
+        glitchFeature.Create();
         
         BindUIElements();
     }
 
     private void OnDisable()
     {
-        RTFeature.SetActive(false);
+        glitchFeature.passSettings.useTexture = false;
+        glitchFeature.passSettings.inputTexture = null;
+        glitchFeature.SetActive(false);
     }
 
     // Update is called once per frame

@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Program/BoxBlur/BoxBlur.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Program/Glitch/Glitch.unity
+    guid: 6e09d7268feddba4db2d1306efdb2fa6
   m_configObjects: {}

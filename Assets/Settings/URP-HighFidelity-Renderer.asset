@@ -41,6 +41,9 @@ MonoBehaviour:
     horizontalShake: 0.01
     colorDrift: 0.2
     shader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
+    useTexture: 0
+    inputTexture:
+      Variable: {fileID: 11400000, guid: d179313366c22d24abe70a098e57eacb, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +120,8 @@ MonoBehaviour:
   passSettings:
     renderPassEvent: 500
     computeShader: {fileID: 7200000, guid: ca8bca014a104fa4e908785601b354f4, type: 3}
+    blitShader: {fileID: 0}
+    useShader: 0
     kernelID:
       isConstant: 0
       ConstantValue: 0

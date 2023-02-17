@@ -11,6 +11,9 @@ public class GlitchSettings
     [Range(0, 1)] public float colorDrift;
 
     public Shader shader;
+    
+    public bool useTexture;
+    public STexture2D inputTexture;
 }
 
 public class GlitchFeature : ScriptableRendererFeature
@@ -21,6 +24,9 @@ public class GlitchFeature : ScriptableRendererFeature
     /// <inheritdoc/>
     public override void Create()
     {
+        if(passSettings.useTexture)
+            Shader.SetGlobalTexture("_GlitchTexture", passSettings.inputTexture);
+        
         glitchPass = new GlitchPass(
             "KinoGlitch",
             passSettings

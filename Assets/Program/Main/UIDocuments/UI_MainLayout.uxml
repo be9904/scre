@@ -39,7 +39,7 @@
                         <ui:Label text="Box Blur" display-tooltip-when-elided="true" name="srp-01-label" style="-unity-font-style: normal;" />
                         <ui:Button display-tooltip-when-elided="true" name="srp-01-button" tooltip="scene" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=ff8bcaaa9d21b194ca4ef76263ce4f67&amp;type=3#arrow-right@2x&apos;); padding-left: 15px; padding-right: 15px; background-color: rgba(88, 88, 88, 0); -unity-background-image-tint-color: rgb(0, 0, 0);" />
                     </ui:VisualElement>
-                    <ui:VisualElement name="srp-02" style="flex-direction: row; justify-content: space-between; align-items: center; margin-left: 2%;">
+                    <ui:VisualElement name="srp-02" style="flex-direction: row; justify-content: space-between; align-items: center; margin-left: 2%; opacity: 0.5;">
                         <ui:Label text="Glitch" display-tooltip-when-elided="true" name="srp-02-label" style="-unity-font-style: normal;" />
                         <ui:Button display-tooltip-when-elided="true" name="srp-02-button" tooltip="scene" style="background-image: url(&apos;project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-1087164816274819069&amp;guid=ff8bcaaa9d21b194ca4ef76263ce4f67&amp;type=3#arrow-right@2x&apos;); padding-left: 15px; padding-right: 15px; background-color: rgba(88, 88, 88, 0); -unity-background-image-tint-color: rgb(0, 0, 0);" />
                     </ui:VisualElement>

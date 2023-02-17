@@ -269,12 +269,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blurFeature: {fileID: 4059126897340838834, guid: c85429ff95020fc46bb666f7c097de85,
     type: 2}
-  glitchFeature: {fileID: -3315143538539145202, guid: c85429ff95020fc46bb666f7c097de85,
-    type: 2}
   mainBlurStrength:
     isConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 522194bbc4398df45b67019e93bef2a5, type: 2}
+  glitchFeature: {fileID: -3315143538539145202, guid: c85429ff95020fc46bb666f7c097de85,
+    type: 2}
+  glitchShader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
   mainAbout:
     isConstant: 0
     ConstantValue: 

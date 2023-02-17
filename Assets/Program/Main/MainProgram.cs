@@ -10,8 +10,10 @@ using UnityEngine.SceneManagement;
 public class MainProgram : MonoBehaviour
 {
     [SerializeField] private FullScreenBlurFeature blurFeature;
-    [SerializeField] private GlitchFeature glitchFeature;
     [SerializeField] private SInt mainBlurStrength;
+    
+    [SerializeField] private GlitchFeature glitchFeature;
+    [SerializeField] private Shader glitchShader;
 
     // UI Elements
     private UIDocument mainUI;
@@ -31,6 +33,8 @@ public class MainProgram : MonoBehaviour
         blurFeature.SetActive(true);
         glitchFeature.SetActive(true);
         blurFeature.passSettings.blurStrength = mainBlurStrength;
+        glitchFeature.passSettings.useTexture = false;
+        glitchFeature.passSettings.shader = glitchShader;
         blurFeature.Create();
         
         BindUIElements();

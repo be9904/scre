@@ -19,6 +19,8 @@ public class GlitchPass : ScriptableRenderPass
     private float colorDrift;
 
     private Material blitMaterial;
+    private bool useTexture;
+    private int texID;
 
     // shader properties
     private static readonly int scanLineJitterID = Shader.PropertyToID("_ScanLineJitter");
@@ -38,6 +40,11 @@ public class GlitchPass : ScriptableRenderPass
         
         blitMaterial = new Material(passSettings.shader);
         blitMaterial.hideFlags = HideFlags.DontSave;
+        // blitMaterial.mainTexture = null;
+        
+        useTexture = passSettings.useTexture;
+        if (useTexture)
+            texID = Shader.PropertyToID("_GlitchTexture");
     }
 
     public void Setup(RenderTargetIdentifier cameraColorTargetIdent)
@@ -49,7 +56,9 @@ public class GlitchPass : ScriptableRenderPass
     public override void Configure(CommandBuffer cmd, RenderTextureDescriptor cameraTextureDescriptor)
     {
         // create a temporary render texture that matches the camera
-        cmd.GetTemporaryRT(tempTexture.id, cameraTextureDescriptor);
+        if (!useTexture)
+            cmd.GetTemporaryRT(tempTexture.id, cameraTextureDescriptor);
+        
     }
 
     // Here you can implement the rendering logic.
@@ -63,8 +72,15 @@ public class GlitchPass : ScriptableRenderPass
         
         UpdateMaterialProperties();
         
-        cmd.Blit(cameraColorTargetIdent, tempTexture.Identifier());
-        cmd.Blit(tempTexture.Identifier(), cameraColorTargetIdent, blitMaterial, 0);
+        if (!useTexture)
+        {
+            cmd.Blit(cameraColorTargetIdent, tempTexture.Identifier());
+            cmd.Blit(tempTexture.Identifier(), cameraColorTargetIdent, blitMaterial, 0);
+        }
+        else
+        {
+            cmd.Blit(Shader.GetGlobalTexture(texID), cameraColorTargetIdent, blitMaterial, 0);
+        }
 
         context.ExecuteCommandBuffer(cmd);
         
@@ -75,7 +91,8 @@ public class GlitchPass : ScriptableRenderPass
     // Cleanup any allocated resources that were created during the execution of this render pass.
     public override void OnCameraCleanup(CommandBuffer cmd)
     {
-        cmd.ReleaseTemporaryRT(tempTexture.id);
+        if(!useTexture)
+            cmd.ReleaseTemporaryRT(tempTexture.id);
     }
 
     void UpdateMaterialProperties()
