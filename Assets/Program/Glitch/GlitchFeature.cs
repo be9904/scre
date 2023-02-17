@@ -5,6 +5,8 @@ using UnityEngine.Rendering.Universal;
 [System.Serializable]
 public class GlitchSettings
 {
+    public RenderPassEvent renderPassEvent;
+    
     [Range(0, 1)] public float scanLineJitter;
     [Range(0, 1)] public float verticalJump;
     [Range(0, 1)] public float horizontalShake;

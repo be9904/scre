@@ -26,7 +26,7 @@ public class BlackHoleCamera : MonoBehaviour
     private float nod;
     private float offsetDistance;
 
-    private Vector4 bounds;
+    private Camera          mainCam;
 
     private UIDocument      programUI;
     private Label           title;
@@ -67,11 +67,13 @@ public class BlackHoleCamera : MonoBehaviour
         rotation = initialRotation.y;
         offsetDistance = sqrScroll ? Mathf.Sqrt(initialDistance) : initialDistance;
 
-        bounds = ProgramUtility.GetScreenBounds(Camera.main);
+        mainCam = Camera.main;
     }
 
     private void FixedUpdate()
     {
+        if (!ProgramUtility.CheckBounds(mainCam)) return;
+        
         var pivot = offset + target.transform.position;
         var toCamera = Quaternion.Euler(nod, rotation, 0) * Vector3.back;
 
@@ -81,18 +83,14 @@ public class BlackHoleCamera : MonoBehaviour
 
     private void Update()
     {
+        if (!ProgramUtility.CheckBounds(mainCam)) return;
+        
         var prevRightClicked = rightClicked;
         if (Input.GetMouseButton(1))
         {
-            if (Input.mousePosition.x > bounds.x &&
-                Input.mousePosition.x < bounds.y &&
-                Input.mousePosition.y > bounds.z &&
-                Input.mousePosition.y < bounds.w)
-            {
-                rightClicked = true;
-                rotation += Input.GetAxis("Mouse X") * panSensitivity;
-                nod = Math.Clamp(nod - Input.GetAxis("Mouse Y") * panSensitivity, -89, 89);
-            }
+            rightClicked = true;
+            rotation += Input.GetAxis("Mouse X") * panSensitivity;
+            nod = Math.Clamp(nod - Input.GetAxis("Mouse Y") * panSensitivity, -89, 89);
         }
         else rightClicked = false;
 
@@ -112,6 +110,8 @@ public class BlackHoleCamera : MonoBehaviour
 
     private void LateUpdate()
     {
+        if (!ProgramUtility.CheckBounds(mainCam)) return;
+        
         var targetPosition = target.transform.position;
         var thisToTarget = targetPosition - transform.position;
 

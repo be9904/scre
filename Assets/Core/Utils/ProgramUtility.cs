@@ -56,6 +56,17 @@ public static class ProgramUtility
         return bounds;
     }
 
+    public static bool CheckBounds(Camera mainCam)
+    {
+        Vector4 bounds = GetScreenBounds(mainCam);
+
+        return
+            Input.mousePosition.x > bounds.x &&
+            Input.mousePosition.x < bounds.y &&
+            Input.mousePosition.y > bounds.z &&
+            Input.mousePosition.y < bounds.w;
+    }
+
     public static void FitVisualElementToHeight(UIDocument doc, string compName)
     {
         VisualElement root = doc.GetComponent<UIDocument>()?.rootVisualElement;

@@ -31,7 +31,7 @@ public class GlitchPass : ScriptableRenderPass
     public GlitchPass(string profilerTag, GlitchSettings passSettings)
     {
         this.profilerTag = profilerTag;
-        renderPassEvent = RenderPassEvent.AfterRendering;
+        renderPassEvent = passSettings.renderPassEvent;
 
         scanLineJitter = passSettings.scanLineJitter;
         verticalJump = passSettings.verticalJump;

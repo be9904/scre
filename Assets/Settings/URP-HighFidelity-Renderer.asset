@@ -34,8 +34,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 472f1510ef5d39d4daa941ec05aac041, type: 3}
   m_Name: Kino Glitch
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   passSettings:
+    renderPassEvent: 300
     scanLineJitter: 0.4
     verticalJump: 0
     horizontalShake: 0.01
@@ -138,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152cb38777d68d3428c1d9f896cefcab, type: 3}
   m_Name: FullScreenBlurFeature
   m_EditorClassIdentifier: 
-  m_Active: 1
+  m_Active: 0
   passSettings:
     renderPassEvent: 500
     blitShader: {fileID: 4800000, guid: f3c2627b7d897144392cd9ffdcb3db97, type: 3}
@@ -149,4 +150,4 @@ MonoBehaviour:
     blurStrength:
       isConstant: 0
       ConstantValue: 0
-      Variable: {fileID: 11400000, guid: ff3f8dab0598676459ce3ce7bf249c9d, type: 2}
+      Variable: {fileID: 11400000, guid: 522194bbc4398df45b67019e93bef2a5, type: 2}
