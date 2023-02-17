@@ -40,8 +40,8 @@ public class MipmapProgram : MonoBehaviour
         BindUIElements();
 
         // initial run to match image index
-        mipFeature.passSettings.inputTexture = images[imageIndex];
-        mipFeature.Create();
+        // mipFeature.passSettings.inputTexture = images[imageIndex];
+        // mipFeature.Create();
     }
     
     private void OnDisable()
@@ -69,8 +69,8 @@ public class MipmapProgram : MonoBehaviour
             dropdownOptions.Add(tex.Variable.texture.name);
         }
         dropdown.choices = dropdownOptions;
-        dropdown.value = dropdownOptions[imageIndex];
-        dropdown.index = imageIndex;
+        dropdown.value = mipFeature.passSettings.inputTexture.Variable.texture.name;
+        dropdown.index = dropdownOptions.FindIndex(str => str == dropdown.value);
 
         // set text
         title.text = titleText.Value;
