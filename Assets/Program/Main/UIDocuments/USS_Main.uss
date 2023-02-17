@@ -31,11 +31,20 @@
     border-radius: 30px;
     border-width: 4px;
     height: 60%;
-    right: 3%;
+    right: 1%;
     background-image: url('project://database/Assets/UI%20Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss?fileID=-4521532143779581420&guid=ff8bcaaa9d21b194ca4ef76263ce4f67&type=3#arrow-right');
 }
 
 .unity-button:hover {
     border-color: rgb(100, 100, 100);
     -unity-background-image-tint-color: rgb(100, 100, 100);
+}
+
+.scene-ve {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 2%;
+    border-bottom-width: 5px;
+    margin-right: 2%;
 }

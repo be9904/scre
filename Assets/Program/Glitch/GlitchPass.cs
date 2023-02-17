@@ -72,12 +72,12 @@ public class GlitchPass : ScriptableRenderPass
         
         UpdateMaterialProperties();
         
-        if (!useTexture)
+        if (!useTexture) // blit from camera color
         {
             cmd.Blit(cameraColorTargetIdent, tempTexture.Identifier());
             cmd.Blit(tempTexture.Identifier(), cameraColorTargetIdent, blitMaterial, 0);
         }
-        else
+        else // blit from global(uniform) texture
         {
             cmd.Blit(Shader.GetGlobalTexture(texID), cameraColorTargetIdent, blitMaterial, 0);
         }

@@ -12,4 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4364db4e59d5064a8c1ca5fb6c19e4a, type: 3}
   m_Name: Description_StarryNight
   m_EditorClassIdentifier: 
-  Value: by Dabin Won
+  Value: 'by Dabin Won
+
+
+    The starry night was made with a random range node such
+    as a noise node.
+
+
+    By using the step node, the black dots in the previous
+    node turned into radiant stars, and the white background turned into a black
+    night sky.
+
+
+    Lastly, by adding some colors and waves with the time node,
+    the night sky was completed.
+
+
+    One fun fact is that the Heart''s material
+    is the same as the starry night material.
+
+
+'

@@ -31,11 +31,13 @@ public class MainProgram : MonoBehaviour
     void OnEnable()
     {
         blurFeature.SetActive(true);
-        glitchFeature.SetActive(true);
         blurFeature.passSettings.blurStrength = mainBlurStrength;
+        blurFeature.Create();
+        
+        glitchFeature.SetActive(true);
         glitchFeature.passSettings.useTexture = false;
         glitchFeature.passSettings.shader = glitchShader;
-        blurFeature.Create();
+        glitchFeature.Create();
         
         BindUIElements();
     }
