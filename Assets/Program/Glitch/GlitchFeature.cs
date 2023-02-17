@@ -7,10 +7,10 @@ public class GlitchSettings
 {
     public RenderPassEvent renderPassEvent;
     
-    [Range(0, 1)] public float scanLineJitter;
-    [Range(0, 1)] public float verticalJump;
-    [Range(0, 1)] public float horizontalShake;
-    [Range(0, 1)] public float colorDrift;
+    public SFloat scanLineJitter;
+    public SFloat verticalJump;
+    public SFloat horizontalShake;
+    public SFloat colorDrift;
 
     public Shader shader;
     

@@ -82,6 +82,7 @@ Shader "Hidden/Kino/Glitch/Analog/Logo"
             {
                 float u = IN.uv.x;
                 float v = IN.uv.y;
+                half3 white = half3(1,1,1);
 
                 // Scan line jitter
                 float jitter = nrand(v, _Time.x) * 2 - 1;
@@ -99,7 +100,9 @@ Shader "Hidden/Kino/Glitch/Analog/Logo"
                 half4 src1 = _MainTex.Sample(sampler_MainTex, frac(float2(u + jitter + shake, jump)));
                 half4 src2 = _MainTex.Sample(sampler_MainTex, frac(float2(u + jitter + shake + drift, jump)));
 
-                return half4(1 - src1.r, 1 - src2.g, 1 - src1.b, 1);
+                half4 color = half4(src1.r, src2.g, src1.b, 1);
+
+                return half4(white.rgb - color.rgb, 1);
             }
             ENDHLSL
         }

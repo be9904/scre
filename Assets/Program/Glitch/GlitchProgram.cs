@@ -15,11 +15,12 @@ public class GlitchProgram : MonoBehaviour
     // pass params
     private float verticalJumpTime;
     
-    // feature settings
-    private float scanLineJitter;
-    private float verticalJump;
-    private float horizontalShake;
-    private float colorDrift;
+    // Renderer feature options to tweak at runtime
+    [Header("Render Feature Runtime Options")]
+    [SerializeField] private SFloat scanLineJitter;
+    [SerializeField] private SFloat verticalJump;
+    [SerializeField] private SFloat horizontalShake;
+    [SerializeField] private SFloat colorDrift;
     
     // shader properties
     private static readonly int scanLineJitterID = Shader.PropertyToID("_ScanLineJitter");
@@ -100,25 +101,35 @@ public class GlitchProgram : MonoBehaviour
         title.text = titleText.Value;
         description.text = descriptionText.Value;
         
+        // initial values
+        scanLineJitterSlider.value = scanLineJitter;
+        verticalJumpSlider.value = verticalJump;
+        horizontalShakeSlider.value = horizontalShake;
+        colorDriftSlider.value = colorDrift;
+
         // register events
         scanLineJitterSlider.RegisterCallback<ChangeEvent<float>>(evt =>
         {
-            scanLineJitter = evt.newValue;
+            scanLineJitter.Variable.SetValue(evt.newValue);
+            glitchFeature.Create();
         });
 
         verticalJumpSlider.RegisterCallback<ChangeEvent<float>>(evt =>
         {
-            verticalJump = evt.newValue;
+            verticalJump.Variable.SetValue(evt.newValue);
+            glitchFeature.Create();
         });
 
         horizontalShakeSlider.RegisterCallback<ChangeEvent<float>>(evt =>
         {
-            horizontalShake = evt.newValue;
+            horizontalShake.Variable.SetValue(evt.newValue);
+            glitchFeature.Create();
         });
 
         colorDriftSlider.RegisterCallback<ChangeEvent<float>>(evt =>
         {
-            colorDrift = evt.newValue;
+            colorDrift.Variable.SetValue(evt.newValue);
+            glitchFeature.Create();
         });
 
         returnButton.RegisterCallback<ClickEvent>(evt =>

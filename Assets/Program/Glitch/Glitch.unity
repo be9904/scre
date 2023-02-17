@@ -406,6 +406,22 @@ MonoBehaviour:
   glitchShader: {fileID: 4800000, guid: a88d0e8f46088f3479679ec5b0aa924a, type: 3}
   inputTexture:
     Variable: {fileID: 11400000, guid: d179313366c22d24abe70a098e57eacb, type: 2}
+  scanLineJitter:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: d1b84671594157941abedc2380d400bc, type: 2}
+  verticalJump:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 9dea1d2d46a5f504b871bf3d52ac1617, type: 2}
+  horizontalShake:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 134dfd9877b4f814f92d0c1935d09b38, type: 2}
+  colorDrift:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: df4946ce4ce2f214a992f0d0feea66f6, type: 2}
   titleText:
     isConstant: 0
     ConstantValue: 
