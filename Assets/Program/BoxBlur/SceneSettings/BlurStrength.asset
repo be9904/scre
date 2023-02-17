@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c6e905755f0134092a4722dbc4a879, type: 3}
   m_Name: BlurStrength
   m_EditorClassIdentifier: 
-  Value: 5
+  Value: 0

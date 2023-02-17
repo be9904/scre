@@ -81,7 +81,8 @@ public class MainProgram : MonoBehaviour
         // set feature active
         glitchFeature.SetActive(true);
         
-        // set feature settings
+        Debug.Log("Bind glitch features: Main Program");
+        // bind feature settings
         glitchFeature.passSettings.useTexture = false;
         glitchFeature.passSettings.shader = glitchShader;
         glitchFeature.passSettings.scanLineJitter = scanLineJitter;

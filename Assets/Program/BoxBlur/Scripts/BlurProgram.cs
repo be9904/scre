@@ -25,6 +25,7 @@ public class BlurProgram : MonoBehaviour
     
     void OnEnable()
     {
+        Debug.Log(blurStrength.Variable.Value);
         // set renderer feature active
         blurFeature.SetActive(true);
         blurFeature.passSettings.blurStrength = blurStrength;
@@ -52,6 +53,7 @@ public class BlurProgram : MonoBehaviour
 
         // initial values
         slider.value = blurStrength.Value;
+        Debug.Log("Slider: " + slider.value);
 
         // set text
         title.text = titleText.Value;

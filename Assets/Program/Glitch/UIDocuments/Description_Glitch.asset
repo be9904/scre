@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4364db4e59d5064a8c1ca5fb6c19e4a, type: 3}
   m_Name: Description_Glitch
   m_EditorClassIdentifier: 
-  Value: 'This is a analog glitch effect implemented with a custom renderer feature.
+  Value: 'This is an analog glitch effect implemented with a custom renderer feature.
 
 
     The

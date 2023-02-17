@@ -44,14 +44,28 @@ public class GlitchProgram : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log(scanLineJitter.Value);
+        Debug.Log(verticalJump.Value);
+        Debug.Log(horizontalShake.Value);
+        Debug.Log(colorDrift.Value);
         ProgramUtility.AdjustView(Camera.main);
-        
+
+        // set feature as active
         glitchFeature.SetActive(true);
+        
+        // bind feature settings
+        glitchFeature.passSettings.scanLineJitter = scanLineJitter;
+        glitchFeature.passSettings.verticalJump = verticalJump;
+        glitchFeature.passSettings.horizontalShake = horizontalShake;
+        glitchFeature.passSettings.colorDrift = colorDrift;
         glitchFeature.passSettings.useTexture = true;
         glitchFeature.passSettings.inputTexture = inputTexture;
         glitchFeature.passSettings.shader = glitchShader;
+
+        // create feature with new settings
         glitchFeature.Create();
         
+        // bind UI Elements
         BindUIElements();
     }
 

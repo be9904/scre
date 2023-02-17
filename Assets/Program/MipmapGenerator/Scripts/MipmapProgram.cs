@@ -38,7 +38,7 @@ public class MipmapProgram : MonoBehaviour
 
         // bind UI
         BindUIElements();
-        
+
         // initial run to match image index
         mipFeature.passSettings.inputTexture = images[imageIndex];
         mipFeature.Create();
