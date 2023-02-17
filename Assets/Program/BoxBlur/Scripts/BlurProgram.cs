@@ -53,7 +53,6 @@ public class BlurProgram : MonoBehaviour
 
         // initial values
         slider.value = blurStrength.Value;
-        Debug.Log("Slider: " + slider.value);
 
         // set text
         title.text = titleText.Value;

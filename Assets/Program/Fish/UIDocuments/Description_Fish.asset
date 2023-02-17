@@ -19,7 +19,7 @@ MonoBehaviour:
 
 
     The
-    movement of the fish is determined by a sinusodial wave and time, with a few
+    movement of the fish is determined by a sinusoidal wave and time, with a few
     other parameters.
 
 

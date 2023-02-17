@@ -17,7 +17,12 @@ public class RTProgram : MonoBehaviour
     private Label           title;
     private Label           description;
     private DropdownField   dropdown;
-    private List<string>    dropdownOptions = new List<string>{"Noise", "UV"};
+    private List<string>    dropdownOptions 
+        = new List<string>
+        {
+            "UV",
+            "Simple Noise"
+        };
     private Button          returnButton;
     
     [Header("UI Text Fields")]
