@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/USS_Toggle.uss?fileID=7433441132597879392&amp;guid=59f471ae057509944aa7dceb7ce47642&amp;type=3#USS_Toggle" />
+    <ui:VisualElement name="UI_MainDocument" style="width: 100%; height: 100%;">
+        <Style src="project://database/Assets/UI/USS/USS_Toggle.uss?fileID=7433441132597879392&amp;guid=59f471ae057509944aa7dceb7ce47642&amp;type=3#USS_Toggle" />
+        <ui:VisualElement name="Container" style="border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); border-left-width: 10px; height: 75%; border-top-width: 10px;">
+            <ui:ScrollView name="ToggleOptions" style="width: 25%; height: 100%; left: 75%; border-left-width: 10px; border-right-width: 10px; border-top-width: 0; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); background-color: rgb(60, 60, 60);">
+                <ui:VisualElement name="UI_ToggleTemplate">
+                    <ui:Slider picking-mode="Ignore" label="Amplitude" value="0.02" high-value="1" name="amplitude" low-value="0.01" />
+                    <ui:Slider picking-mode="Ignore" label="Frequency" value="5" high-value="10" name="frequency" low-value="1" />
+                    <ui:Slider picking-mode="Ignore" label="Speed" value="1" high-value="5" name="speed" low-value="0.5" />
+                </ui:VisualElement>
+            </ui:ScrollView>
+        </ui:VisualElement>
+        <ui:ScrollView name="DescriptionField" style="height: 25%; border-left-width: 10px; border-right-width: 10px; border-top-width: 10px; border-bottom-width: 10px; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); background-color: rgb(60, 60, 60); color: rgb(255, 255, 255);">
+            <ui:Label text="Title goes here" display-tooltip-when-elided="true" name="Title" style="font-size: 50px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); -unity-text-align: middle-left; margin-top: 1%; margin-bottom: 1%;">
+                <ui:Button display-tooltip-when-elided="true" text="Return" name="Return" style="border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); padding-left: 3px; padding-right: 3px; padding-top: 3px; padding-bottom: 3px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 1px; margin-left: 5px; margin-right: 5px; margin-top: 5px; margin-bottom: 5px; background-color: rgb(87, 87, 87); align-items: auto; width: 5%; left: 94.5%; font-size: 15px; -unity-text-align: middle-center;" />
+            </ui:Label>
+            <ui:Label text="Write a description for the scene." display-tooltip-when-elided="true" name="Description" style="font-size: 25px; padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; -unity-font: resource(&apos;FlatSkin/Font/Roboto-Black&apos;); -unity-text-align: upper-left;" />
+        </ui:ScrollView>
+    </ui:VisualElement>
+</ui:UXML>

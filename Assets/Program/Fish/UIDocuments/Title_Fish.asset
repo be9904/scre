@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4364db4e59d5064a8c1ca5fb6c19e4a, type: 3}
-  m_Name: Title_FullscreenRT
+  m_Name: Title_Fish
   m_EditorClassIdentifier: 
-  Value: Full Screen Render Textures
+  Value: Fish Movement

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
@@ -6,8 +7,9 @@ using UnityEngine.Rendering.Universal;
 public class FullScreenRTSettings
 {
     public RenderPassEvent renderPassEvent;
-    // public Shader blitShader;
     public ComputeShader computeShader;
+    public Shader blitShader;
+    [HideInInspector] public bool useShader = false;
     
     // runtime options
     public SInt kernelID;
@@ -21,6 +23,9 @@ public class FullScreenRTFeature : ScriptableRendererFeature
     /// <inheritdoc/>
     public override void Create()
     {
+        if(passSettings.blitShader != null)
+            passSettings.useShader = true;
+        
         rtPass = new FullScreenRTPass(
             "Fullscreen Render Texture",
             passSettings

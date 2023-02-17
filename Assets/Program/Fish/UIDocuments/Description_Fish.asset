@@ -10,6 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4364db4e59d5064a8c1ca5fb6c19e4a, type: 3}
-  m_Name: Title_BoxBlur
+  m_Name: Description_Fish
   m_EditorClassIdentifier: 
-  Value: Full Screen Box Blur
+  Value: 'by Yunchan Kim
+
+
+    This shader implements movement of a fish.
+
+
+    The
+    movement of the fish is determined by a sinusodial wave and time, with a few
+    other parameters.
+
+
+    You can check how the fish moves differently according
+    to amplitude, frequency and speed.
+
+
+'

@@ -7,6 +7,10 @@
 .unity-popup-field {
 }
 
+.unity-base-field__label{
+    color: white;
+}
+
 .unity-base-popup-field__text{
     color: black;
 }

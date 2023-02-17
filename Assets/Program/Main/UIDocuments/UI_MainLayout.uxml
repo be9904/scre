@@ -54,7 +54,7 @@
         </ui:VisualElement>
         <ui:VisualElement style="flex-direction: row;">
             <ui:Label text="Members" display-tooltip-when-elided="true" name="members" class="description-field-title" style="color: rgb(0, 0, 0); -unity-font: url(&apos;project://database/Assets/Fonts/FutuHv.ttf?fileID=12800000&amp;guid=7a28b3a2e27c1cd4daaf23e83b485b39&amp;type=3#FutuHv&apos;); font-size: 30px; -unity-text-align: upper-left; -unity-font-style: bold-and-italic;" />
-            <ui:Label text="Member 1 / Member 2" display-tooltip-when-elided="true" name="members-field" class="description-field-body" style="-unity-text-align: middle-left; color: rgb(0, 0, 0);" />
+            <ui:Label text="Member 1 / Member 2" display-tooltip-when-elided="true" name="members-field" class="description-field-body" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -8,7 +8,9 @@ public class FullScreenRTPass : ScriptableRenderPass
     
     private RenderTargetIdentifier cameraColorTargetIdent;
 
-    // private Material blitMaterial;
+    private Material blitMaterial;
+    private bool useShader;
+    
     private ComputeShader computeShader;
     private int kernelID;
     private RenderTexture outputRT;
@@ -19,7 +21,11 @@ public class FullScreenRTPass : ScriptableRenderPass
         
         this.profilerTag = profilerTag;
         kernelID = passSettings.kernelID.Value;
-        // blitMaterial = new Material(passSettings.blitShader);
+        if (passSettings.useShader)
+        {
+            useShader = passSettings.useShader;
+            blitMaterial = new Material(passSettings.blitShader);
+        }
         computeShader = passSettings.computeShader;
         
         DispatchComputeShader();
@@ -38,7 +44,10 @@ public class FullScreenRTPass : ScriptableRenderPass
         CommandBuffer cmd = CommandBufferPool.Get();
         cmd.Clear();
         
-        cmd.Blit(outputRT, cameraColorTargetIdent);
+        if(useShader)
+            cmd.Blit(outputRT, cameraColorTargetIdent, blitMaterial, 0);
+        else
+            cmd.Blit(outputRT, cameraColorTargetIdent);
 
         context.ExecuteCommandBuffer(cmd);
         

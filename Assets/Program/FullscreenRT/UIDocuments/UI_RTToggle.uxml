@@ -1,6 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/RenderTexture/UIDocuments/USS_RTStyleSheet.uss?fileID=7433441132597879392&amp;guid=b65ad5ab6998c564f86a6293bce73812&amp;type=3#USS_RTStyleSheet" />
-    <ui:VisualElement name="UI_ToggleTemplate">
-        <ui:DropdownField label="Kernel ID" name="KernelID" style="font-size: 18px; border-left-color: rgb(94, 94, 94); border-right-color: rgb(94, 94, 94); border-top-color: rgb(94, 94, 94); border-bottom-color: rgb(94, 94, 94); border-bottom-width: 3px; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px; -unity-font: none; color: rgb(255, 255, 255);" />
-    </ui:VisualElement>
-</ui:UXML>
