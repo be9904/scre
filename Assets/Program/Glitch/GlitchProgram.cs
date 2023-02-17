@@ -62,28 +62,6 @@ public class GlitchProgram : MonoBehaviour
         glitchFeature.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        UpdateGlitchProperties();
-    }
-    
-    void UpdateGlitchProperties()
-    {
-        verticalJumpTime += Time.deltaTime * verticalJump * 11.3f;
-
-        var sl_thresh = Mathf.Clamp01(1.0f - scanLineJitter * 1.2f);
-        var sl_disp = 0.002f + Mathf.Pow(scanLineJitter, 3) * 0.05f;
-        Shader.SetGlobalVector(scanLineJitterID, new Vector2(sl_disp, sl_thresh));
-
-        var vj = new Vector2(verticalJump, verticalJumpTime);
-        Shader.SetGlobalVector(verticalJumpID, vj);
-        Shader.SetGlobalFloat(horizontalShakeID, horizontalShake * 0.2f);
-
-        var cd = new Vector2(colorDrift * 0.04f, Time.time * 606.11f);
-        Shader.SetGlobalVector(colorDriftID, cd);
-    }
-
     void BindUIElements()
     {
         programUI = GetComponent<UIDocument>();

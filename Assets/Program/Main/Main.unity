@@ -276,6 +276,22 @@ MonoBehaviour:
   glitchFeature: {fileID: -3315143538539145202, guid: c85429ff95020fc46bb666f7c097de85,
     type: 2}
   glitchShader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
+  scanLineJitter:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 37c10f154c8e8964e8ff584da8a1f27d, type: 2}
+  verticalJump:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 7e2270527500d0a4291d3cd2f69537a1, type: 2}
+  horizontalShake:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: f51c5248359954941ad842f946b7a511, type: 2}
+  colorDrift:
+    isConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: a5e7a714f2be8b44a9eeca5e03c70ceb, type: 2}
   mainAbout:
     isConstant: 0
     ConstantValue: 

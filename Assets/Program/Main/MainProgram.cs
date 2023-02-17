@@ -9,11 +9,17 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(UIDocument))]
 public class MainProgram : MonoBehaviour
 {
+    [Header("Blur Feature")]
     [SerializeField] private FullScreenBlurFeature blurFeature;
     [SerializeField] private SInt mainBlurStrength;
     
+    [Header("Glitch Feature")]
     [SerializeField] private GlitchFeature glitchFeature;
     [SerializeField] private Shader glitchShader;
+    [SerializeField] private SFloat scanLineJitter;
+    [SerializeField] private SFloat verticalJump;
+    [SerializeField] private SFloat horizontalShake;
+    [SerializeField] private SFloat colorDrift;
 
     // UI Elements
     private UIDocument mainUI;
@@ -23,10 +29,10 @@ public class MainProgram : MonoBehaviour
     private List<Button> textures;
     private List<Button> srp;
 
-
+    [Header("UI Elements")]
     [SerializeField] private SText mainAbout;
     [SerializeField] private SText mainMembers;
-    public List<Button> buttons;
+    private List<Button> buttons;
     
     void OnEnable()
     {
@@ -34,10 +40,7 @@ public class MainProgram : MonoBehaviour
         blurFeature.passSettings.blurStrength = mainBlurStrength;
         blurFeature.Create();
         
-        glitchFeature.SetActive(true);
-        glitchFeature.passSettings.useTexture = false;
-        glitchFeature.passSettings.shader = glitchShader;
-        glitchFeature.Create();
+        InitGlitch();
         
         BindUIElements();
     }
@@ -55,8 +58,10 @@ public class MainProgram : MonoBehaviour
         about = root.Q<Label>("about-field");
         members = root.Q<Label>("members-field");
 
+        // get all buttons with tooltip 'scene'
         buttons = root.Query<Button>().Where(elem => elem.tooltip == "scene").ToList();
 
+        // register callback for all buttons
         for (int i = 0; i < buttons.Count ; i ++)
         {
             int sceneIndex = i + 2;
@@ -69,5 +74,22 @@ public class MainProgram : MonoBehaviour
 
         about.text = mainAbout.Value;
         members.text = mainMembers.Value;
+    }
+
+    void InitGlitch()
+    {
+        // set feature active
+        glitchFeature.SetActive(true);
+        
+        // set feature settings
+        glitchFeature.passSettings.useTexture = false;
+        glitchFeature.passSettings.shader = glitchShader;
+        glitchFeature.passSettings.scanLineJitter = scanLineJitter;
+        glitchFeature.passSettings.verticalJump = verticalJump;
+        glitchFeature.passSettings.horizontalShake = horizontalShake;
+        glitchFeature.passSettings.colorDrift = colorDrift;
+        
+        // create feature with new settings
+        glitchFeature.Create();
     }
 }
