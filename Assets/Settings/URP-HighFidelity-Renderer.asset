@@ -17,7 +17,7 @@ MonoBehaviour:
     renderPassEvent: 500
     computeShader: {fileID: 7200000, guid: 43103ba046d3bef4ca3aef97524991a8, type: 3}
     inputTexture:
-      Variable: {fileID: 11400000, guid: 5a8ff709628bb8e4a86a0ddb15e405f4, type: 2}
+      Variable: {fileID: 11400000, guid: 7070734222ad9134bb2c88e4f50ffe6d, type: 2}
     mipLevel:
       isConstant: 0
       ConstantValue: 0
@@ -40,23 +40,23 @@ MonoBehaviour:
     scanLineJitter:
       isConstant: 0
       ConstantValue: 0
-      Variable: {fileID: 11400000, guid: d1b84671594157941abedc2380d400bc, type: 2}
+      Variable: {fileID: 11400000, guid: 37c10f154c8e8964e8ff584da8a1f27d, type: 2}
     verticalJump:
       isConstant: 0
       ConstantValue: 0
-      Variable: {fileID: 11400000, guid: 9dea1d2d46a5f504b871bf3d52ac1617, type: 2}
+      Variable: {fileID: 11400000, guid: 7e2270527500d0a4291d3cd2f69537a1, type: 2}
     horizontalShake:
       isConstant: 0
       ConstantValue: 0
-      Variable: {fileID: 11400000, guid: 134dfd9877b4f814f92d0c1935d09b38, type: 2}
+      Variable: {fileID: 11400000, guid: f51c5248359954941ad842f946b7a511, type: 2}
     colorDrift:
       isConstant: 0
       ConstantValue: 0
-      Variable: {fileID: 11400000, guid: df4946ce4ce2f214a992f0d0feea66f6, type: 2}
+      Variable: {fileID: 11400000, guid: a5e7a714f2be8b44a9eeca5e03c70ceb, type: 2}
     shader: {fileID: 4800000, guid: da33272284ea24f208f36998880990be, type: 3}
     useTexture: 0
     inputTexture:
-      Variable: {fileID: 11400000, guid: d179313366c22d24abe70a098e57eacb, type: 2}
+      Variable: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

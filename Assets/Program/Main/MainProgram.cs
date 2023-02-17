@@ -11,15 +11,15 @@ public class MainProgram : MonoBehaviour
 {
     [Header("Blur Feature")]
     [SerializeField] private FullScreenBlurFeature blurFeature;
-    [SerializeField] private SInt mainBlurStrength;
+    private int _blurStrength;
     
     [Header("Glitch Feature")]
     [SerializeField] private GlitchFeature glitchFeature;
     [SerializeField] private Shader glitchShader;
-    [SerializeField] private SFloat scanLineJitter;
-    [SerializeField] private SFloat verticalJump;
-    [SerializeField] private SFloat horizontalShake;
-    [SerializeField] private SFloat colorDrift;
+    private float _scanLineJitter;
+    private float _verticalJump;
+    private float _horizontalShake;
+    private float _colorDrift;
 
     // UI Elements
     private UIDocument mainUI;
@@ -36,9 +36,7 @@ public class MainProgram : MonoBehaviour
     
     void OnEnable()
     {
-        blurFeature.SetActive(true);
-        blurFeature.passSettings.blurStrength = mainBlurStrength;
-        blurFeature.Create();
+        InitBlur();
         
         InitGlitch();
         
@@ -47,7 +45,13 @@ public class MainProgram : MonoBehaviour
 
     private void OnDisable()
     {
+        blurFeature.passSettings.blurStrength.Variable.SetValue(_blurStrength);
         blurFeature.SetActive(false);
+        
+        glitchFeature.passSettings.scanLineJitter.Variable.SetValue(_scanLineJitter);
+        glitchFeature.passSettings.verticalJump.Variable.SetValue(_verticalJump);
+        glitchFeature.passSettings.horizontalShake.Variable.SetValue(_horizontalShake);
+        glitchFeature.passSettings.colorDrift.Variable.SetValue(_colorDrift);
         glitchFeature.SetActive(false);
     }
 
@@ -76,6 +80,14 @@ public class MainProgram : MonoBehaviour
         members.text = mainMembers.Value;
     }
 
+    void InitBlur()
+    {
+        blurFeature.SetActive(true);
+        _blurStrength = blurFeature.passSettings.blurStrength;
+        blurFeature.passSettings.blurStrength.Variable.SetValue(5);
+        blurFeature.Create();
+    }
+
     void InitGlitch()
     {
         // set feature active
@@ -85,10 +97,18 @@ public class MainProgram : MonoBehaviour
         // bind feature settings
         glitchFeature.passSettings.useTexture = false;
         glitchFeature.passSettings.shader = glitchShader;
-        glitchFeature.passSettings.scanLineJitter = scanLineJitter;
-        glitchFeature.passSettings.verticalJump = verticalJump;
-        glitchFeature.passSettings.horizontalShake = horizontalShake;
-        glitchFeature.passSettings.colorDrift = colorDrift;
+
+        // save scene values
+        _scanLineJitter = glitchFeature.passSettings.scanLineJitter;
+        _verticalJump = glitchFeature.passSettings.verticalJump;
+        _horizontalShake = glitchFeature.passSettings.horizontalShake;
+        _colorDrift = glitchFeature.passSettings.colorDrift;
+        
+        // set main values
+        glitchFeature.passSettings.scanLineJitter.Variable.SetValue(0.2f);
+        glitchFeature.passSettings.verticalJump.Variable.SetValue(0.05f);
+        glitchFeature.passSettings.horizontalShake.Variable.SetValue(0);
+        glitchFeature.passSettings.colorDrift.Variable.SetValue(0.35f);
         
         // create feature with new settings
         glitchFeature.Create();

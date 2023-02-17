@@ -25,14 +25,14 @@ public class BlurProgram : MonoBehaviour
     
     void OnEnable()
     {
-        Debug.Log(blurStrength.Variable.Value);
         // set renderer feature active
         blurFeature.SetActive(true);
-        blurFeature.passSettings.blurStrength = blurStrength;
-        blurFeature.Create();
         
         // bind UI elements
         BindUIElements();
+        
+        blurFeature.passSettings.blurStrength = blurStrength;
+        blurFeature.Create();
     }
     
     private void OnDisable()
