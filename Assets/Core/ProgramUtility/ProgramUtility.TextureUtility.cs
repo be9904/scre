@@ -13,6 +13,7 @@ public static partial class ProgramUtility
         
         return outputTex;
     }
+    
     public static Texture2D RTtoTex2D(RenderTexture rt, TextureWrapMode wrapMode)
     {
         Texture2D outputTex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, true);

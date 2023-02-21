@@ -1,8 +1,6 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UIElements;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(UIDocument))]
 public class Program : MonoBehaviour
