@@ -1,15 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
-public static class ProgramUtility
+public static partial class ProgramUtility
 {
-    public static void ReturnToMain()
-    {
-        SmoothLoading.SetNextSceneIndex(0);
-        SceneManager.LoadScene(1);
-    }
-    
     public static void AdjustView(Camera mainCam)
     {
         // calculate aspect ratio
@@ -66,39 +58,4 @@ public static class ProgramUtility
             Input.mousePosition.y > bounds.z &&
             Input.mousePosition.y < bounds.w;
     }
-
-    public static void FitVisualElementToHeight(UIDocument doc, string compName)
-    {
-        VisualElement root = doc.GetComponent<UIDocument>()?.rootVisualElement;
-        
-        if (root == null) return;
-
-        VisualElement ve = root.Q<VisualElement>(compName);
-        
-    }
-    
-    #region RTtoTex2D
-    public static Texture2D RTtoTex2D(RenderTexture rt)
-    {
-        Texture2D outputTex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, true);
-        outputTex.wrapMode = TextureWrapMode.Clamp;
-        
-        RenderTexture.active = rt;
-        outputTex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
-        outputTex.Apply();
-        
-        return outputTex;
-    }
-    public static Texture2D RTtoTex2D(RenderTexture rt, TextureWrapMode wrapMode)
-    {
-        Texture2D outputTex = new Texture2D(rt.width, rt.height, TextureFormat.RGBA32, false, true);
-        outputTex.wrapMode = wrapMode;
-        
-        RenderTexture.active = rt;
-        outputTex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
-        outputTex.Apply();
-        
-        return outputTex;
-    }
-    #endregion
 }
