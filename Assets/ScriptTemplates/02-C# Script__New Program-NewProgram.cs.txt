@@ -1,0 +1,16 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class #SCRIPTNAME# : Program
+{
+    private void OnEnable()
+    {
+        base.Init();
+    }
+    
+    private void OnDisable()
+    {
+        base.Disable();
+    }
+}

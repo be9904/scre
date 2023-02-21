@@ -21,7 +21,18 @@ public class Program : MonoBehaviour
     [Header("Scriptable Renderer Feature")]
     [SerializeField] protected ScriptableRendererFeature rendererFeature;
 
-    private void OnEnable()
+    protected virtual void Init()
+    {
+        rendererFeature.SetActive(true);
+        BindUI();
+    }
+
+    protected virtual void Disable()
+    {
+        rendererFeature.SetActive(false);
+    }
+
+    void BindUI()
     {
         // get main component and root ve
         programUI = GetComponent<UIDocument>();
