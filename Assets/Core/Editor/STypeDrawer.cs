@@ -1,11 +1,12 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 namespace Core.Editor
 {
+    [CustomPropertyDrawer(typeof(SFloat))] [CustomPropertyDrawer(typeof(SInt))]
+    [CustomPropertyDrawer(typeof(SBool))] [CustomPropertyDrawer(typeof(SText))]
     [CustomPropertyDrawer(typeof(SRPEvent))]
-    public class SGenericTypeDrawer : PropertyDrawer
+    public class STypeDrawer : PropertyDrawer
     {
         /// <summary>
         /// Options to display in the popup to select constant or variable.

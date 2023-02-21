@@ -2,13 +2,13 @@ using System;
 using UnityEngine.Rendering.Universal;
 
 [Serializable]
-public class SRPEvent : SType<RenderPassEvent>
+public class SRPEvent
 {
-    public new bool isConstant = true;
-    public new RenderPassEvent ConstantValue;
-    public new SRPEventVariable Variable;
+    public bool isConstant = true;
+    public RenderPassEvent ConstantValue;
+    public SRPEventVariable Variable;
 
-    public new RenderPassEvent Value
+    public RenderPassEvent Value
     {
         get { return isConstant ? ConstantValue : Variable.Value; }
     }

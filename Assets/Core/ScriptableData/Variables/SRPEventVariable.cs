@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 [CreateAssetMenu(menuName = "Scriptable Data/Variables/Render Pass Event")]
-public class SRPEventVariable : STypeVariable<RenderPassEvent>
+public class SRPEventVariable : ScriptableObject
 {
-    public new RenderPassEvent Value;
+    public RenderPassEvent Value;
 }
