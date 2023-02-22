@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: ProgramTemplate
   m_EditorClassIdentifier: 
   templateScene: {fileID: 102900000, guid: 99c9720ab356a0642a771bea13969a05, type: 3}
-  templateName: 
-  description: 
+  templateName: SCRE Program Template
+  description: Template scene for creating new programs. Main Camera is positioned
+    to fit the template UI Document.
   preview: {fileID: 0}
   dependencies:
   - dependency: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
